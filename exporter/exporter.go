@@ -1,6 +1,7 @@
 package exporter
 
 import (
+	"fmt"
 	"sync"
 
 	"github.com/prometheus/client_golang/prometheus"
@@ -21,6 +22,9 @@ var (
 			Help:      "Check if Jenkins response can be processed",
 		},
 	)
+
+	// jobColor defines a map to collect the build color codes.
+	jobColor = map[string]prometheus.Gauge{}
 )
 
 // init just defines the initial state of the exports.
@@ -48,6 +52,10 @@ type Exporter struct {
 // Describe defines the metric descriptions for Prometheus.
 func (e *Exporter) Describe(ch chan<- *prometheus.Desc) {
 	ch <- isUp.Desc()
+
+	for _, metric := range jobColor {
+		ch <- metric.Desc()
+	}
 }
 
 // Collect delivers the metrics to Prometheus.
@@ -65,11 +73,48 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 	}
 
 	ch <- isUp
+
+	for _, metric := range jobColor {
+		ch <- metric
+	}
 }
 
 // scrape just starts the scraping loop.
 func (e *Exporter) scrape() error {
 	log.Debug("start scrape loop")
+
+	var (
+		root = &Root{}
+	)
+
+	if err := root.Fetch(e.address, e.username, e.password); err != nil {
+		log.Debugf("%s", err)
+		return fmt.Errorf("failed to fetch root data")
+	}
+
+	for _, job := range root.Jobs {
+		log.Debugf("processing %s job", job.Name)
+
+		if job.Color != "" {
+			if _, ok := jobColor[job.Key()]; ok == false {
+				jobColor[job.Key()] = prometheus.NewGauge(
+					prometheus.GaugeOpts{
+						Namespace: namespace,
+						Name:      "job_color",
+						Help:      "Color code of the Jenkins job",
+						ConstLabels: prometheus.Labels{
+							"name": job.Name,
+						},
+					},
+				)
+			}
+
+			color := colorToGauge(job.Color)
+			log.Debugf("setting color to %f for %s", color, job.Name)
+
+			jobColor[job.Key()].Set(colorToGauge(job.Color))
+		}
+	}
 
 	isUp.Set(1)
 	return nil

@@ -21,6 +21,12 @@
 			"revisionTime": "2017-03-31T03:19:02Z"
 		},
 		{
+			"checksumSHA1": "j+WFAFfZu9lF9gkUJ17dAGfo6To=",
+			"path": "github.com/jackspirou/syscerts",
+			"revision": "b68f5469dff16e102bd6a2d5b3e79341c938d736",
+			"revisionTime": "2016-05-31T02:50:14Z"
+		},
+		{
 			"checksumSHA1": "bKMZjd2wPw13VwoE7mBeSv5djFA=",
 			"path": "github.com/matttproud/golang_protobuf_extensions/pbutil",
 			"revision": "c12348ce28de40eed0136aa2b644d0ee0650e56c",
@@ -85,6 +91,12 @@
 			"path": "github.com/prometheus/procfs/xfs",
 			"revision": "a1dba9ce8baed984a2495b658c82687f8157b98f",
 			"revisionTime": "2017-02-16T22:32:56Z"
+		},
+		{
+			"checksumSHA1": "QiBU6N8l1ogOr4c9UsanH9gT2rg=",
+			"path": "github.com/yosida95/golang-jenkins",
+			"revision": "240cc3577c67fa346043f628c4b1f8091ba23c98",
+			"revisionTime": "2017-01-09T14:00:23Z"
 		},
 		{
 			"checksumSHA1": "ArDa4bMPKzhiS1I7iioemBwZ6tE=",
