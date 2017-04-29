@@ -18,7 +18,7 @@ func (j *Job) Key() string {
 	return j.Name
 }
 
-// Root represents the root api reponse from the Jenkins API.
+// Root represents the root api response from the Jenkins API.
 type Root struct {
 	Jobs []*Job `json:"jobs"`
 }
