@@ -54,11 +54,19 @@ make test build
 ## Metrics
 
 ```
-
-
-
-
-
+# HELP jenkins_exporter_build_info A metric with a constant '1' value labeled by version, revision, branch, and goversion from which jenkins_exporter was built.
+# TYPE jenkins_exporter_build_info gauge
+jenkins_exporter_build_info{branch="master",goversion="go1.8.1",revision="4792fdc30a695a1a19d54ffe395d0f838d6d8cee",version="0.1.0"} 1
+# HELP jenkins_job_color Color code of the Jenkins job
+# TYPE jenkins_job_color gauge
+jenkins_job_color{name="build-project-1"} 0
+jenkins_job_color{name="build-project-2"} 0
+jenkins_job_color{name="build-project-3"} 0
+jenkins_job_color{name="build-project-4"} 0
+jenkins_job_color{name="build-project-5"} 1
+# HELP jenkins_up Check if Jenkins response can be processed
+# TYPE jenkins_up gauge
+jenkins_up 1
 ```
 
 
