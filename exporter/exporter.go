@@ -41,7 +41,7 @@ func NewExporter(address, username, password string) *Exporter {
 	}
 }
 
-// Exporter combines the metric collector and descritions.
+// Exporter combines the metric collector and descriptions.
 type Exporter struct {
 	address  string
 	username string
