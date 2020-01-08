@@ -25,6 +25,9 @@ var (
 
 	// jobColor defines a map to collect the build color codes.
 	jobColor = map[string]prometheus.Gauge{}
+
+	// queueItemStartTime defines a map to collect the queue items.
+	queueItemStartTime = map[string]prometheus.Gauge{}
 )
 
 // init just defines the initial state of the exports.
@@ -41,7 +44,7 @@ func NewExporter(address, username, password string) *Exporter {
 	}
 }
 
-// Exporter combines the metric collector and descriptions.
+// Exporter combines the metric collector and descritions.
 type Exporter struct {
 	address  string
 	username string
@@ -77,6 +80,10 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 	for _, metric := range jobColor {
 		ch <- metric
 	}
+
+	for _, metric := range queueItemStartTime {
+		ch <- metric
+	}
 }
 
 // scrape just starts the scraping loop.
@@ -84,36 +91,53 @@ func (e *Exporter) scrape() error {
 	log.Debug("start scrape loop")
 
 	var (
-		root = &Root{}
+		metrics = &Collector{}
 	)
 
-	if err := root.Fetch(e.address, e.username, e.password); err != nil {
+	if err := metrics.Fetch(e.address, e.username, e.password); err != nil {
 		log.Debugf("%s", err)
-		return fmt.Errorf("failed to fetch root data")
+		return fmt.Errorf("failed to fetch metrics")
 	}
 
-	for _, job := range root.Jobs {
-		log.Debugf("processing %s job", job.Name)
+	for _, jobItem := range metrics.Jobs {
+		log.Debugf("processing jobItem %s", jobItem.Name)
 
-		if job.Color != "" {
-			if _, ok := jobColor[job.Key()]; ok == false {
-				jobColor[job.Key()] = prometheus.NewGauge(
+		if jobItem.Color != "" {
+			if _, ok := jobColor[jobItem.Name]; ok == false {
+				jobColor[jobItem.Name] = prometheus.NewGauge(
 					prometheus.GaugeOpts{
 						Namespace: namespace,
 						Name:      "job_color",
 						Help:      "Color code of the Jenkins job",
 						ConstLabels: prometheus.Labels{
-							"name": job.Name,
+							"name": jobItem.Name,
 						},
 					},
 				)
 			}
 
-			color := colorToGauge(job.Color)
-			log.Debugf("setting color to %f for %s", color, job.Name)
-
-			jobColor[job.Key()].Set(colorToGauge(job.Color))
+			color := colorToGauge(jobItem.Color)
+			log.Debugf("setting job_color to %f for %s", color, jobItem.Name)
+			jobColor[jobItem.Name].Set(colorToGauge(jobItem.Color))
 		}
+	}
+
+	for _, queueItem := range metrics.Queue {
+		log.Debugf("processing queueItem %s", queueItem.Task.Name)
+
+		queueItemStartTime[queueItem.Task.Name] = prometheus.NewGauge(
+			prometheus.GaugeOpts{
+				Namespace: namespace,
+				Name:      "queue_item_start_time_seconds",
+				Help:      "Time the item entered the Jenkins queue since unix epoch in seconds.",
+				ConstLabels: prometheus.Labels{
+					"name": queueItem.Task.Name,
+				},
+			},
+		)
+
+		log.Debugf("setting queue_item_start_time_seconds to %f for %s", queueItem.InQueueSince, queueItem.Task.Name)
+		queueItemStartTime[queueItem.Task.Name].Set(queueItem.InQueueSince)
 	}
 
 	isUp.Set(1)
