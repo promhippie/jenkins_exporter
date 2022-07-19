@@ -1,5 +1,17 @@
-# Changelog
+# Changelog for unreleased
 
-## [0.1.0](https://github.com/webhippie/jenkins_exporter/releases/tag/v0.1.0) - 2017-04-29
+The following sections list the changes for unreleased.
 
-* Initial release
+## Summary
+
+ * Chg #6: Initial release of basic version
+
+## Details
+
+ * Change #6: Initial release of basic version
+
+   Just prepared an initial basic version which could be released to the public.
+
+   https://github.com/promhippie/jenkins_exporter/issues/6
+
+
