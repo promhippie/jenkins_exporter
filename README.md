@@ -1,92 +1,59 @@
 # Jenkins Exporter
 
-[![Build Status](http://github.dronehippie.de/api/badges/webhippie/jenkins_exporter/status.svg)](http://github.dronehippie.de/webhippie/jenkins_exporter)
-[![Go Doc](https://godoc.org/github.com/webhippie/jenkins_exporter?status.svg)](http://godoc.org/github.com/webhippie/jenkins_exporter)
-[![Go Report](http://goreportcard.com/badge/github.com/webhippie/jenkins_exporter)](http://goreportcard.com/report/github.com/webhippie/jenkins_exporter)
-[![](https://images.microbadger.com/badges/image/tboerger/jenkins-exporter.svg)](http://microbadger.com/images/tboerger/jenkins-exporter "Get your own image badge on microbadger.com")
-[![Join the chat at https://gitter.im/webhippie/general](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/webhippie/general)
+[![Current Tag](https://img.shields.io/github/v/tag/promhippie/jenkins_exporter?sort=semver)](https://github.com/promhippie/prometheus-jenkins-sd) [![General Build](https://github.com/promhippie/jenkins_exporter/workflows/general.yml/badge.svg)](https://github.com/promhippie/jenkins_exporter/actions/workflows/general.yaml) [![Join the Matrix chat at https://matrix.to/#/#webhippie:matrix.org](https://img.shields.io/badge/matrix-%23webhippie-7bc9a4.svg)](https://matrix.to/#/#webhippie:matrix.org) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2ac6144ce7c04df68fed25d763dec543)](https://www.codacy.com/gh/promhippie/jenkins_exporter/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=promhippie/jenkins_exporter&amp;utm_campaign=Badge_Grade) [![Go Doc](https://godoc.org/github.com/promhippie/jenkins_exporter?status.svg)](http://godoc.org/github.com/promhippie/jenkins_exporter) [![Go Report](http://goreportcard.com/badge/github.com/promhippie/jenkins_exporter)](http://goreportcard.com/report/github.com/promhippie/jenkins_exporter)
 
-A [Prometheus](https://prometheus.io/) exporter that collects Jenkins statistics.
+An exporter for [Prometheus][prometheus] that collects metrics from
+[Jenkins][jenkins].
 
+## Install
 
-## Installation
-
-If you are missing something just write us on our nice [Gitter](https://gitter.im/webhippie/general) chat. If you find a security issue please contact thomas@webhippie.de first. Currently we are providing only a Docker image at `tboerger/jenkins-exporter`.
-
-
-### Usage
-
-```bash
-# docker run -ti --rm tboerger/jenkins-exporter -h
-Usage of /bin/jenkins_exporter:
-  -jenkins.address string
-      Address where to reach Jenkins
-  -jenkins.password string
-      Password to authenticate on Jenkins
-  -jenkins.username string
-      Username to authenticate on Jenkins
-  -log.format value
-      Set the log target and format. Example: "logger:syslog?appname=bob&local=7" or "logger:stdout?json=true" (default "logger:stderr")
-  -log.level value
-      Only log messages with the given severity or above. Valid levels: [debug, info, warn, error, fatal] (default "info")
-  -version
-      Print version information
-  -web.listen-address string
-      Address to listen on for web interface and telemetry (default ":9103")
-  -web.telemetry-path string
-      Path to expose metrics of the exporter (default "/metrics")
-```
-
+You can download prebuilt binaries from our [GitHub releases][releases], or you
+can use our containers published on [Docker Hub][dockerhub] and [Quay][quayio].
+If you need further guidance how to install this take a look at our
+[documentation][docs].
 
 ## Development
 
-Make sure you have a working Go environment, for further reference or a guide take a look at the [install instructions](http://golang.org/doc/install.html). It is also possible to just simply execute the `go get github.com/webhippie/jenkins_exporter` command, but we prefer to use our `Makefile`:
+Make sure you have a working Go environment, for further reference or a guide
+take a look at the [install instructions][golang]. This project requires
+Go >= v1.17, at least that's the version we are using.
 
-```bash
-go get -d github.com/webhippie/jenkins_exporter
-cd $GOPATH/src/github.com/webhippie/jenkins_exporter
-make test build
+```console
+git clone https://github.com/promhippie/jenkins_exporter.git
+cd jenkins_exporter
 
-./jenkins_exporter -h
+make generate build
+
+./bin/jenkins_exporter -h
 ```
 
+## Security
 
-## Metrics
-
-```
-# HELP jenkins_exporter_build_info A metric with a constant '1' value labeled by version, revision, branch, and goversion from which jenkins_exporter was built.
-# TYPE jenkins_exporter_build_info gauge
-jenkins_exporter_build_info{branch="master",goversion="go1.8.1",revision="4792fdc30a695a1a19d54ffe395d0f838d6d8cee",version="0.1.0"} 1
-# HELP jenkins_job_color Color code of the Jenkins job
-# TYPE jenkins_job_color gauge
-jenkins_job_color{name="build-project-1"} 0
-jenkins_job_color{name="build-project-2"} 0
-jenkins_job_color{name="build-project-3"} 0
-jenkins_job_color{name="build-project-4"} 0
-jenkins_job_color{name="build-project-5"} 1
-# HELP jenkins_up Check if Jenkins response can be processed
-# TYPE jenkins_up gauge
-jenkins_up 1
-```
-
+If you find a security issue please contact
+[thomas@webhippie.de](mailto:thomas@webhippie.de) first.
 
 ## Contributing
 
 Fork -> Patch -> Push -> Pull Request
 
-
 ## Authors
 
-* [Thomas Boerger](https://github.com/tboerger)
-
+-   [Thomas Boerger](https://github.com/tboerger)
 
 ## License
 
 Apache-2.0
 
-
 ## Copyright
 
+```console
+Copyright (c) 2018 Thomas Boerger <thomas@webhippie.de>
 ```
-Copyright (c) 2017 Thomas Boerger <http://www.webhippie.de>
-```
+
+[prometheus]: https://prometheus.io
+[jenkins]: https://jenkins.io
+[releases]: https://github.com/promhippie/jenkins_exporter/releases
+[dockerhub]: https://hub.docker.com/r/promhippie/jenkins-exporter/tags/
+[quayio]: https://quay.io/repository/promhippie/jenkins-exporter?tab=tags
+[docs]: https://promhippie.github.io/jenkins_exporter/#getting-started
+[golang]: http://golang.org/doc/install.html
