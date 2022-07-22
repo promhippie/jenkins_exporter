@@ -1,0 +1,19 @@
+baseURL = "https://promhippie.github.io/jenkins_exporter/"
+languageCode = "en-us"
+title = "Jenkins Exporter"
+pygmentsUseClasses = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[blackfriday]
+  angledQuotes = true
+  fractions = false
+  plainIDAnchors = true
+  smartlists = true
+  extensions = ["hardLineBreak"]
+
+[params]
+  author = "Thomas Boerger"
+  description = "Prometheus exporter for Jenkins"
+  keywords = "prometheus, exporter, jenkins"
