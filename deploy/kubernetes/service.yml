@@ -1,0 +1,22 @@
+---
+kind: Service
+apiVersion: v1
+
+metadata:
+  name: jenkins-exporter
+  labels:
+    app.kubernetes.io/name: jenkins-exporter
+    app.kubernetes.io/component: exporter
+
+spec:
+  selector:
+    app.kubernetes.io/name: jenkins-exporter
+    app.kubernetes.io/component: exporter
+
+  ports:
+    - name: http
+      port: 9506
+      targetPort: http
+      protocol: TCP
+
+...

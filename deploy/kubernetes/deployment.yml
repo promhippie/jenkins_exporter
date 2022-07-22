@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: jenkins-exporter
+  labels:
+    app.kubernetes.io/name: jenkins-exporter
+    app.kubernetes.io/component: exporter
+
+spec:
+  replicas: 1
+
+  revisionHistoryLimit: 3
+  progressDeadlineSeconds: 600
+
+  strategy:
+    type: Recreate
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: jenkins-exporter
+      app.kubernetes.io/component: exporter
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: jenkins-exporter
+        app.kubernetes.io/component: exporter
+
+    spec:
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+
+      containers:
+        - name: exporter
+          image: jenkins-exporter
+          imagePullPolicy: Always
+
+          envFrom:
+            - configMapRef:
+                name: jenkins-exporter
+            - secretRef:
+                name: jenkins-exporter
+
+          ports:
+            - name: http
+              containerPort: 9506
+              protocol: TCP
+
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: http
+
+...
