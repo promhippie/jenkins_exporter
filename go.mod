@@ -3,7 +3,7 @@ module github.com/promhippie/jenkins_exporter
 go 1.12
 
 require (
-	github.com/go-chi/chi/v5 v5.0.2
+	github.com/go-chi/chi/v5 v5.0.8
 	github.com/go-kit/kit v0.10.0
 	github.com/go-kit/log v0.2.1 // indirect
 	github.com/jackspirou/syscerts v0.0.0-20160531025014-b68f5469dff1
