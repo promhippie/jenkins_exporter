@@ -10,7 +10,7 @@ require (
 	github.com/joho/godotenv v1.3.0
 	github.com/oklog/run v1.1.0
 	github.com/prometheus/client_golang v1.12.2
-	github.com/prometheus/common v0.32.1
+	github.com/prometheus/common v0.42.0
 	github.com/urfave/cli/v2 v2.3.0
 	github.com/webhippie/go-jenkins v0.0.0-20181008223759-8b487b3d9fdd
 )
