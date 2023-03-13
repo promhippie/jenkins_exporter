@@ -1,12 +1,7 @@
-FROM webhippie/alpine:latest-amd64 AS build
+FROM arm64v8/alpine:3.17@sha256:c41ab5c992deb4fe7e5da09f67a8804a46bd0592bfdf0b1847dde0e0889d2bff AS build
 RUN apk add --no-cache ca-certificates mailcap
 
 FROM scratch
-
-LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.opencontainers.image.title="Jenkins Exporter" \
-  org.opencontainers.image.documentation="https://promhippie.github.io/jenkins_exporter/" \
-  org.opencontainers.image.vendor="Thomas Boerger"
 
 EXPOSE 9506
 ENTRYPOINT ["/usr/bin/jenkins_exporter"]
