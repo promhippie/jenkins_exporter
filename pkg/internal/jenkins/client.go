@@ -8,7 +8,6 @@ import (
 	"encoding/json"
 	"errors"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"strings"
 )
@@ -150,13 +149,13 @@ func (c *Client) Do(req *http.Request, v interface{}) (*Response, error) {
 		c.httpDumper.DumpResponse(res)
 	}
 
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 
 	if err != nil {
 		return &Response{Response: res}, err
 	}
 
-	res.Body = ioutil.NopCloser(bytes.NewReader(body))
+	res.Body = io.NopCloser(bytes.NewReader(body))
 
 	if res.StatusCode >= 400 && res.StatusCode <= 599 {
 		return &Response{Response: res}, errors.New(http.StatusText(res.StatusCode))
