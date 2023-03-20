@@ -535,12 +535,32 @@ you will always get the standard metrics exported by the Golang client of
 take a look at the <a href="https://github.com/prometheus/client_golang/blob/master/prometheus/process_collector.go">process collector</a> and the
 <a href="https://github.com/prometheus/client_golang/blob/master/prometheus/go_collector.go">Go collector</a>.</p>
 <dl>
-<dt>github_request_duration_seconds{collector}</dt>
+<dt>jenkins_job_buildable{name, path, class}</dt>
+<dd>1 if the sjob is buildable, 0 otherwise</dd>
+<dt>jenkins_job_color{name, path, class}</dt>
+<dd>Color code of the jenkins job</dd>
+<dt>jenkins_job_disabled{name, path, class}</dt>
+<dd>1 if the job is disabled, 0 otherwise</dd>
+<dt>jenkins_job_last_build{name, path, class}</dt>
+<dd>Builder number for last build</dd>
+<dt>jenkins_job_last_completed_build{name, path, class}</dt>
+<dd>Builder number for last completed build</dd>
+<dt>jenkins_job_last_failed_build{name, path, class}</dt>
+<dd>Builder number for last failed build</dd>
+<dt>jenkins_job_last_stable_build{name, path, class}</dt>
+<dd>Builder number for last stable build</dd>
+<dt>jenkins_job_last_successful_build{name, path, class}</dt>
+<dd>Builder number for last successful build</dd>
+<dt>jenkins_job_last_unstable_build{name, path, class}</dt>
+<dd>Builder number for last unstable build</dd>
+<dt>jenkins_job_last_unsuccessful_build{name, path, class}</dt>
+<dd>Builder number for last unsuccessful build</dd>
+<dt>jenkins_job_next_build_number{name, path, class}</dt>
+<dd>Next build number for the job</dd>
+<dt>jenkins_request_duration_seconds{collector}</dt>
 <dd>Histogram of latencies for requests to the api per collector</dd>
-<dt>github_request_failures_total{collector}</dt>
+<dt>jenkins_request_failures_total{collector}</dt>
 <dd>Total number of failed requests to the api per collector</dd>
-<dt>owncloud_job_dummy{}</dt>
-<dd>Dummy help</dd>
 </dl>
 
 			</section>
