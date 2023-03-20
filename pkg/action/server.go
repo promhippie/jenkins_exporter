@@ -15,9 +15,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/promhippie/jenkins_exporter/pkg/config"
 	"github.com/promhippie/jenkins_exporter/pkg/exporter"
+	"github.com/promhippie/jenkins_exporter/pkg/internal/jenkins"
 	"github.com/promhippie/jenkins_exporter/pkg/middleware"
 	"github.com/promhippie/jenkins_exporter/pkg/version"
-	"github.com/webhippie/go-jenkins/jenkins"
 )
 
 // Server handles the server sub-command.
@@ -30,11 +30,20 @@ func Server(cfg *config.Config, logger log.Logger) error {
 		"go", version.Go,
 	)
 
-	client := jenkins.NewClient(
+	client, err := jenkins.NewClient(
 		jenkins.WithEndpoint(cfg.Target.Address),
 		jenkins.WithUsername(cfg.Target.Username),
 		jenkins.WithPassword(cfg.Target.Password),
 	)
+
+	if err != nil {
+		level.Error(logger).Log(
+			"msg", "Failed to check credentials",
+			"err", err,
+		)
+
+		return err
+	}
 
 	var gr run.Group
 
