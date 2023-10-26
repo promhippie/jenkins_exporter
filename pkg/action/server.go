@@ -13,6 +13,7 @@ import (
 	"github.com/go-kit/log/level"
 	"github.com/oklog/run"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/prometheus/exporter-toolkit/web"
 	"github.com/promhippie/jenkins_exporter/pkg/config"
 	"github.com/promhippie/jenkins_exporter/pkg/exporter"
 	"github.com/promhippie/jenkins_exporter/pkg/internal/jenkins"
@@ -30,10 +31,32 @@ func Server(cfg *config.Config, logger log.Logger) error {
 		"go", version.Go,
 	)
 
+	username, err := config.Value(cfg.Target.Username)
+
+	if err != nil {
+		level.Error(logger).Log(
+			"msg", "Failed to load username from file",
+			"err", err,
+		)
+
+		return err
+	}
+
+	password, err := config.Value(cfg.Target.Password)
+
+	if err != nil {
+		level.Error(logger).Log(
+			"msg", "Failed to load password from file",
+			"err", err,
+		)
+
+		return err
+	}
+
 	client, err := jenkins.NewClient(
 		jenkins.WithEndpoint(cfg.Target.Address),
-		jenkins.WithUsername(cfg.Target.Username),
-		jenkins.WithPassword(cfg.Target.Password),
+		jenkins.WithUsername(username),
+		jenkins.WithPassword(password),
 	)
 
 	if err != nil {
@@ -61,7 +84,15 @@ func Server(cfg *config.Config, logger log.Logger) error {
 				"addr", cfg.Server.Addr,
 			)
 
-			return server.ListenAndServe()
+			return web.ListenAndServe(
+				server,
+				&web.FlagConfig{
+					WebListenAddresses: sliceP([]string{cfg.Server.Addr}),
+					WebSystemdSocket:   boolP(false),
+					WebConfigFile:      stringP(cfg.Server.Web),
+				},
+				logger,
+			)
 		}, func(reason error) {
 			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 			defer cancel()
@@ -105,6 +136,10 @@ func handler(cfg *config.Config, logger log.Logger, client *jenkins.Client) *chi
 	mux.Use(middleware.RealIP)
 	mux.Use(middleware.Timeout)
 	mux.Use(middleware.Cache)
+
+	if cfg.Server.Pprof {
+		mux.Mount("/debug", middleware.Profiler())
+	}
 
 	if cfg.Collector.Jobs {
 		level.Debug(logger).Log(

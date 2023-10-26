@@ -10,8 +10,14 @@ JENKINS_EXPORTER_WEB_ADDRESS
 JENKINS_EXPORTER_WEB_PATH
 : Path to bind the metrics server, defaults to `/metrics`
 
+JENKINS_EXPORTER_WEB_PPROF
+: Enable pprof debugging for server, defaults to `false`
+
 JENKINS_EXPORTER_WEB_TIMEOUT
 : Server metrics endpoint timeout, defaults to `10s`
+
+JENKINS_EXPORTER_WEB_CONFIG
+: Path to web-config file
 
 JENKINS_EXPORTER_REQUEST_TIMEOUT
 : Timeout requesting Jenkins API, defaults to `5s`
