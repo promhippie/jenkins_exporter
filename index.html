@@ -83,7 +83,7 @@
 		line-height: 1.6;
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 		color: #242424;
-		max-width: 800px;
+		max-width: 900px;
 		margin: 5% auto;
 	}
 
@@ -130,6 +130,7 @@
 	h3 {
 		font-size: 18px;
 		margin-bottom: 0.3em;
+		margin-top: 1.0em;
 	}
 
 	h1 small a {
@@ -230,6 +231,11 @@
 
 	dl dt {
 		font-weight: bold;
+		margin-top: 10px;
+	}
+
+	dl dt:first-child {
+		margin-top: 0px;
 	}
 
 	dl dd {
@@ -491,6 +497,19 @@ support for it, for details about the config format look at the
 </span></span><span class="line"><span class="cl">      - JENKINS_EXPORTER_PASSWORD=p455w0rd
 </span></span><span class="line"><span class="cl">      - JENKINS_EXPORTER_LOG_PRETTY=true
 </span></span></code></pre></div>
+<p>If you want to provide the required secrets from a file it&rsquo;s also possible. For
+this use case you can write the secret to a file on any path and reference it
+with the following format:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">  jenkins_exporter:
+</span></span><span class="line"><span class="cl">    image: promhippie/jenkins-exporter:latest
+</span></span><span class="line"><span class="cl">    restart: always
+</span></span><span class="line"><span class="cl">    environment:
+</span></span><span class="line"><span class="cl"><span class="gd">-     - JENKINS_EXPORTER_USERNAME=octocat
+</span></span></span><span class="line"><span class="cl"><span class="gd">-     - JENKINS_EXPORTER_PASSWORD=p455w0rd
+</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+     - JENKINS_EXPORTER_USERNAME=file://path/to/secret/file/with/username
+</span></span></span><span class="line"><span class="cl"><span class="gi">+     - JENKINS_EXPORTER_PASSWORD=file://path/to/secret/file/with/password
+</span></span></span><span class="line"><span class="cl"><span class="gi"></span>      - JENKINS_EXPORTER_LOG_PRETTY=true
+</span></span></code></pre></div>
 <p>Finally the exporter should be configured fine, let&rsquo;s start this stack with
 <a href="https://docs.docker.com/compose/">docker-compose</a>, you just need to execute <code>docker-compose up</code> within
 the directory where you have stored the <code>prometheus.yml</code> and
@@ -510,8 +529,12 @@ access the exporter at
 <dd>Address to bind the metrics server, defaults to <code>0.0.0.0:9506</code></dd>
 <dt>JENKINS_EXPORTER_WEB_PATH</dt>
 <dd>Path to bind the metrics server, defaults to <code>/metrics</code></dd>
+<dt>JENKINS_EXPORTER_WEB_PPROF</dt>
+<dd>Enable pprof debugging for server, defaults to <code>false</code></dd>
 <dt>JENKINS_EXPORTER_WEB_TIMEOUT</dt>
 <dd>Server metrics endpoint timeout, defaults to <code>10s</code></dd>
+<dt>JENKINS_EXPORTER_WEB_CONFIG</dt>
+<dd>Path to web-config file</dd>
 <dt>JENKINS_EXPORTER_REQUEST_TIMEOUT</dt>
 <dd>Timeout requesting Jenkins API, defaults to <code>5s</code></dd>
 <dt>JENKINS_EXPORTER_URL</dt>
@@ -535,27 +558,27 @@ you will always get the standard metrics exported by the Golang client of
 take a look at the <a href="https://github.com/prometheus/client_golang/blob/master/prometheus/process_collector.go">process collector</a> and the
 <a href="https://github.com/prometheus/client_golang/blob/master/prometheus/go_collector.go">Go collector</a>.</p>
 <dl>
-<dt>jenkins_job_buildable{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_buildable{name, path, class}</dt>
 <dd>1 if the sjob is buildable, 0 otherwise</dd>
-<dt>jenkins_job_color{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_color{name, path, class}</dt>
 <dd>Color code of the jenkins job</dd>
-<dt>jenkins_job_disabled{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_disabled{name, path, class}</dt>
 <dd>1 if the job is disabled, 0 otherwise</dd>
-<dt>jenkins_job_last_build{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_last_build{name, path, class}</dt>
 <dd>Builder number for last build</dd>
-<dt>jenkins_job_last_completed_build{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_last_completed_build{name, path, class}</dt>
 <dd>Builder number for last completed build</dd>
-<dt>jenkins_job_last_failed_build{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_last_failed_build{name, path, class}</dt>
 <dd>Builder number for last failed build</dd>
-<dt>jenkins_job_last_stable_build{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_last_stable_build{name, path, class}</dt>
 <dd>Builder number for last stable build</dd>
-<dt>jenkins_job_last_successful_build{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_last_successful_build{name, path, class}</dt>
 <dd>Builder number for last successful build</dd>
-<dt>jenkins_job_last_unstable_build{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_last_unstable_build{name, path, class}</dt>
 <dd>Builder number for last unstable build</dd>
-<dt>jenkins_job_last_unsuccessful_build{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_last_unsuccessful_build{name, path, class}</dt>
 <dd>Builder number for last unsuccessful build</dd>
-<dt>jenkins_job_next_build_number{&lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;, &lt;prometheus.ConstrainedLabel Value&gt;}</dt>
+<dt>jenkins_job_next_build_number{name, path, class}</dt>
 <dd>Next build number for the job</dd>
 <dt>jenkins_request_duration_seconds{collector}</dt>
 <dd>Histogram of latencies for requests to the api per collector</dd>
@@ -621,7 +644,7 @@ installation of <a href="https://helm.sh">Helm</a> you just need to execute the 
 </span></span></span><span class="line"><span class="cl"><span class="go">helm install jenkins-exporter promhippie/jenkins-exporter
 </span></span></span></code></pre></div>
 <p>You can also watch that available values and generally the details of the chart
-provided by us within our <a href="https://github.com/promhippie/charts/tree/master/charts/jenkins-exporter">chart</a> repository.</p>
+provided by us within our <a href="https://github.com/promhippie/charts/tree/master/stable/jenkins-exporter">chart</a> repository or on <a href="https://artifacthub.io/packages/helm/promhippie/jenkins-exporter">Artifacthub</a>.</p>
 <p>After applying this manifest the exporter should be directly visible within your
 Prometheus instance depending on your installation if you enabled the
 annotations or the service monitor.</p>
