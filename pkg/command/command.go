@@ -5,7 +5,6 @@ import (
 	"os"
 	"time"
 
-	"github.com/go-kit/log/level"
 	"github.com/promhippie/jenkins_exporter/pkg/action"
 	"github.com/promhippie/jenkins_exporter/pkg/config"
 	"github.com/promhippie/jenkins_exporter/pkg/version"
@@ -34,10 +33,7 @@ func Run() error {
 			logger := setupLogger(cfg)
 
 			if cfg.Target.Address == "" {
-				level.Error(logger).Log(
-					"msg", "Missing required jenkins.url",
-				)
-
+				logger.Error("Missing required jenkins.url")
 				return fmt.Errorf("missing required jenkins.url")
 			}
 
