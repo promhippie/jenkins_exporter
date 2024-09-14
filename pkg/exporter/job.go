@@ -2,10 +2,9 @@ package exporter
 
 import (
 	"context"
+	"log/slog"
 	"time"
 
-	"github.com/go-kit/log"
-	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/promhippie/jenkins_exporter/pkg/config"
 	"github.com/promhippie/jenkins_exporter/pkg/internal/jenkins"
@@ -14,7 +13,7 @@ import (
 // JobCollector collects metrics about the servers.
 type JobCollector struct {
 	client   *jenkins.Client
-	logger   log.Logger
+	logger   *slog.Logger
 	failures *prometheus.CounterVec
 	duration *prometheus.HistogramVec
 	config   config.Target
@@ -33,7 +32,7 @@ type JobCollector struct {
 }
 
 // NewJobCollector returns a new JobCollector.
-func NewJobCollector(logger log.Logger, client *jenkins.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *JobCollector {
+func NewJobCollector(logger *slog.Logger, client *jenkins.Client, failures *prometheus.CounterVec, duration *prometheus.HistogramVec, cfg config.Target) *JobCollector {
 	if failures != nil {
 		failures.WithLabelValues("job").Add(0)
 	}
@@ -41,7 +40,7 @@ func NewJobCollector(logger log.Logger, client *jenkins.Client, failures *promet
 	labels := []string{"name", "path", "class"}
 	return &JobCollector{
 		client:   client,
-		logger:   log.With(logger, "collector", "job"),
+		logger:   logger.With("collector", "job"),
 		failures: failures,
 		duration: duration,
 		config:   cfg,
@@ -157,8 +156,7 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 	c.duration.WithLabelValues("job").Observe(time.Since(now).Seconds())
 
 	if err != nil {
-		level.Error(c.logger).Log(
-			"msg", "Failed to fetch jobs",
+		c.logger.Error("Failed to fetch jobs",
 			"err", err,
 		)
 
@@ -166,8 +164,7 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 		return
 	}
 
-	level.Debug(c.logger).Log(
-		"msg", "Fetched jobs",
+	c.logger.Debug("Fetched jobs",
 		"count", len(jobs),
 	)
 
