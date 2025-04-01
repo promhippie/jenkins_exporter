@@ -8,7 +8,7 @@ import (
 	"github.com/promhippie/jenkins_exporter/pkg/action"
 	"github.com/promhippie/jenkins_exporter/pkg/config"
 	"github.com/promhippie/jenkins_exporter/pkg/version"
-	"github.com/urfave/cli/v2"
+	"github.com/urfave/cli/v3"
 )
 
 // Run parses the command line arguments and executes the program.
