@@ -1,9 +1,5 @@
 package types
 
-import (
-	"encoding/json"
-)
-
 // Job defines the response from specific jobs.
 type Job struct {
 	Class                 string       `json:"_class"`
@@ -23,26 +19,8 @@ type Job struct {
 	NextBuildNumber       int          `json:"nextBuildNumber"`
 }
 
-// BuildNumber defines a custom type for build numbers.
-type BuildNumber int
-
-// UnmarshalJSON implements the json unmarshal interface.
-func (b *BuildNumber) UnmarshalJSON(data []byte) error {
-	type details struct {
-		Number int `json:"number"`
-	}
-
-	var (
-		v = details{}
-	)
-
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-
-	if v.Number != 0 {
-		*b = BuildNumber(v.Number)
-	}
-
-	return nil
+// BuildNumber defines a type for build numbers.
+type BuildNumber struct {
+	Number int    `json:"number"`
+	URL    string `json:"url"`
 }
