@@ -12,10 +12,26 @@ type JobClient struct {
 	client *Client
 }
 
-// Root returns aroot API response.
+// Root returns a root API response.
 func (c *JobClient) Root(ctx context.Context) (types.Hudson, error) {
 	result := types.Hudson{}
 	req, err := c.client.NewRequest(ctx, "GET", fmt.Sprintf("%s/api/json?depth=1", c.client.endpoint), nil)
+
+	if err != nil {
+		return result, err
+	}
+
+	if _, err := c.client.Do(req, &result); err != nil {
+		return result, err
+	}
+
+	return result, nil
+}
+
+// Build returns a specific build.
+func (c *JobClient) Build(ctx context.Context, build *types.BuildNumber) (types.Build, error) {
+	result := types.Build{}
+	req, err := c.client.NewRequest(ctx, "GET", fmt.Sprintf("%sapi/json", build.URL), nil)
 
 	if err != nil {
 		return result, err

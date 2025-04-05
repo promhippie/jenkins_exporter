@@ -29,6 +29,9 @@ type JobCollector struct {
 	LastUnstableBuild     *prometheus.Desc
 	LastUnsuccessfulBuild *prometheus.Desc
 	NextBuild             *prometheus.Desc
+	Duration              *prometheus.Desc
+	StartTime             *prometheus.Desc
+	EndTime               *prometheus.Desc
 }
 
 // NewJobCollector returns a new JobCollector.
@@ -53,7 +56,7 @@ func NewJobCollector(logger *slog.Logger, client *jenkins.Client, failures *prom
 		),
 		Buildable: prometheus.NewDesc(
 			"jenkins_job_buildable",
-			"1 if the sjob is buildable, 0 otherwise",
+			"1 if the job is buildable, 0 otherwise",
 			labels,
 			nil,
 		),
@@ -111,6 +114,24 @@ func NewJobCollector(logger *slog.Logger, client *jenkins.Client, failures *prom
 			labels,
 			nil,
 		),
+		Duration: prometheus.NewDesc(
+			"jenkins_job_duration",
+			"Duration of last build in ms",
+			labels,
+			nil,
+		),
+		StartTime: prometheus.NewDesc(
+			"jenkins_job_start_time",
+			"Start time of last build as unix timestamp",
+			labels,
+			nil,
+		),
+		EndTime: prometheus.NewDesc(
+			"jenkins_job_end_time",
+			"Start time of last build as unix timestamp",
+			labels,
+			nil,
+		),
 	}
 }
 
@@ -128,6 +149,9 @@ func (c *JobCollector) Metrics() []*prometheus.Desc {
 		c.LastUnstableBuild,
 		c.LastUnsuccessfulBuild,
 		c.NextBuild,
+		c.Duration,
+		c.StartTime,
+		c.EndTime,
 	}
 }
 
@@ -144,6 +168,9 @@ func (c *JobCollector) Describe(ch chan<- *prometheus.Desc) {
 	ch <- c.LastUnstableBuild
 	ch <- c.LastUnsuccessfulBuild
 	ch <- c.NextBuild
+	ch <- c.Duration
+	ch <- c.StartTime
+	ch <- c.EndTime
 }
 
 // Collect is called by the Prometheus registry when collecting metrics.
@@ -213,16 +240,48 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(
 				c.LastBuild,
 				prometheus.GaugeValue,
-				float64(*job.LastBuild),
+				float64(job.LastBuild.Number),
 				labels...,
 			)
+
+			build, err := c.client.Job.Build(ctx, job.LastBuild)
+
+			if err != nil {
+				c.logger.Error("Failed to fetch last build",
+					"job", job.Path,
+					"err", err,
+				)
+
+				c.failures.WithLabelValues("job").Inc()
+			} else {
+				ch <- prometheus.MustNewConstMetric(
+					c.Duration,
+					prometheus.GaugeValue,
+					float64(build.Duration),
+					labels...,
+				)
+
+				ch <- prometheus.MustNewConstMetric(
+					c.StartTime,
+					prometheus.GaugeValue,
+					float64(build.Timestamp),
+					labels...,
+				)
+
+				ch <- prometheus.MustNewConstMetric(
+					c.EndTime,
+					prometheus.GaugeValue,
+					float64(build.Timestamp+build.Duration),
+					labels...,
+				)
+			}
 		}
 
 		if job.LastCompletedBuild != nil {
 			ch <- prometheus.MustNewConstMetric(
 				c.LastCompletedBuild,
 				prometheus.GaugeValue,
-				float64(*job.LastCompletedBuild),
+				float64(job.LastCompletedBuild.Number),
 				labels...,
 			)
 		}
@@ -231,7 +290,7 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(
 				c.LastFailedBuild,
 				prometheus.GaugeValue,
-				float64(*job.LastFailedBuild),
+				float64(job.LastFailedBuild.Number),
 				labels...,
 			)
 		}
@@ -240,7 +299,7 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(
 				c.LastStableBuild,
 				prometheus.GaugeValue,
-				float64(*job.LastStableBuild),
+				float64(job.LastStableBuild.Number),
 				labels...,
 			)
 		}
@@ -249,7 +308,7 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(
 				c.LastSuccessfulBuild,
 				prometheus.GaugeValue,
-				float64(*job.LastSuccessfulBuild),
+				float64(job.LastSuccessfulBuild.Number),
 				labels...,
 			)
 		}
@@ -258,7 +317,7 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(
 				c.LastUnstableBuild,
 				prometheus.GaugeValue,
-				float64(*job.LastUnstableBuild),
+				float64(job.LastUnstableBuild.Number),
 				labels...,
 			)
 		}
@@ -267,7 +326,7 @@ func (c *JobCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(
 				c.LastUnsuccessfulBuild,
 				prometheus.GaugeValue,
-				float64(*job.LastUnsuccessfulBuild),
+				float64(job.LastUnsuccessfulBuild.Number),
 				labels...,
 			)
 		}
