@@ -29,6 +29,22 @@ func (c *JobClient) Root(ctx context.Context) (types.Hudson, error) {
 }
 
 // All returns all available jobs.
+func (c *JobClient) Build(ctx context.Context, build *types.BuildNumber) (types.Build, error) {
+	result := types.Build{}
+	req, err := c.client.NewRequest(ctx, "GET", fmt.Sprintf("%sapi/json", build.URL), nil)
+
+	if err != nil {
+		return result, err
+	}
+
+	if _, err := c.client.Do(req, &result); err != nil {
+		return result, err
+	}
+
+	return result, nil
+}
+
+// All returns all available jobs.
 func (c *JobClient) All(ctx context.Context) ([]types.Job, error) {
 	hudson, err := c.Root(ctx)
 
