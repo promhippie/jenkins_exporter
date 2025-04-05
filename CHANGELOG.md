@@ -1,10 +1,11 @@
-# Changelog for unreleased
+# Changelog for 1.2.0
 
-The following sections list the changes for unreleased.
+The following sections list the changes for 1.2.0.
 
 ## Summary
 
  * Chg #104: Switch to official logging library
+ * Enh #126: Duration, start and end time for jobs
 
 ## Details
 
@@ -15,6 +16,13 @@ The following sections list the changes for unreleased.
    should change a little bit.
 
    https://github.com/promhippie/jenkins_exporter/issues/104
+
+ * Enhancement #126: Duration, start and end time for jobs
+
+   We have added 3 additional metrics which resolves the duration of the last build
+   beside the start end end timestamps. Currently it's always using the last build.
+
+   https://github.com/promhippie/jenkins_exporter/issues/126
 
 
 # Changelog for 1.1.0
