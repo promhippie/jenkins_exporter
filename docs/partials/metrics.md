@@ -1,11 +1,17 @@
 jenkins_job_buildable{name, path, class}
-: 1 if the sjob is buildable, 0 otherwise
+: 1 if the job is buildable, 0 otherwise
 
 jenkins_job_color{name, path, class}
 : Color code of the jenkins job
 
 jenkins_job_disabled{name, path, class}
 : 1 if the job is disabled, 0 otherwise
+
+jenkins_job_duration{name, path, class}
+: Duration of last build in ms
+
+jenkins_job_end_time{name, path, class}
+: Start time of last build as unix timestamp
 
 jenkins_job_last_build{name, path, class}
 : Builder number for last build
@@ -30,6 +36,9 @@ jenkins_job_last_unsuccessful_build{name, path, class}
 
 jenkins_job_next_build_number{name, path, class}
 : Next build number for the job
+
+jenkins_job_start_time{name, path, class}
+: Start time of last build as unix timestamp
 
 jenkins_request_duration_seconds{collector}
 : Histogram of latencies for requests to the api per collector
