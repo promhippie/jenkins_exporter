@@ -559,11 +559,15 @@ take a look at the <a href="https://github.com/prometheus/client_golang/blob/mas
 <a href="https://github.com/prometheus/client_golang/blob/master/prometheus/go_collector.go">Go collector</a>.</p>
 <dl>
 <dt>jenkins_job_buildable{name, path, class}</dt>
-<dd>1 if the sjob is buildable, 0 otherwise</dd>
+<dd>1 if the job is buildable, 0 otherwise</dd>
 <dt>jenkins_job_color{name, path, class}</dt>
 <dd>Color code of the jenkins job</dd>
 <dt>jenkins_job_disabled{name, path, class}</dt>
 <dd>1 if the job is disabled, 0 otherwise</dd>
+<dt>jenkins_job_duration{name, path, class}</dt>
+<dd>Duration of last build in ms</dd>
+<dt>jenkins_job_end_time{name, path, class}</dt>
+<dd>Start time of last build as unix timestamp</dd>
 <dt>jenkins_job_last_build{name, path, class}</dt>
 <dd>Builder number for last build</dd>
 <dt>jenkins_job_last_completed_build{name, path, class}</dt>
@@ -580,6 +584,8 @@ take a look at the <a href="https://github.com/prometheus/client_golang/blob/mas
 <dd>Builder number for last unsuccessful build</dd>
 <dt>jenkins_job_next_build_number{name, path, class}</dt>
 <dd>Next build number for the job</dd>
+<dt>jenkins_job_start_time{name, path, class}</dt>
+<dd>Start time of last build as unix timestamp</dd>
 <dt>jenkins_request_duration_seconds{collector}</dt>
 <dd>Histogram of latencies for requests to the api per collector</dd>
 <dt>jenkins_request_failures_total{collector}</dt>
