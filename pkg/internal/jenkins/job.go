@@ -3,8 +3,6 @@ package jenkins
 import (
 	"context"
 	"fmt"
-
-	"github.com/promhippie/jenkins_exporter/pkg/internal/jenkins/types"
 )
 
 // JobClient is a client for the jobs API.
@@ -13,8 +11,8 @@ type JobClient struct {
 }
 
 // Root returns a root API response.
-func (c *JobClient) Root(ctx context.Context) (types.Hudson, error) {
-	result := types.Hudson{}
+func (c *JobClient) Root(ctx context.Context) (Hudson, error) {
+	result := Hudson{}
 	req, err := c.client.NewRequest(ctx, "GET", fmt.Sprintf("%s/api/json?depth=1", c.client.endpoint), nil)
 
 	if err != nil {
@@ -29,8 +27,8 @@ func (c *JobClient) Root(ctx context.Context) (types.Hudson, error) {
 }
 
 // Build returns a specific build.
-func (c *JobClient) Build(ctx context.Context, build *types.BuildNumber) (types.Build, error) {
-	result := types.Build{}
+func (c *JobClient) Build(ctx context.Context, build *BuildNumber) (Build, error) {
+	result := Build{}
 	req, err := c.client.NewRequest(ctx, "GET", fmt.Sprintf("%sapi/json", build.URL), nil)
 
 	if err != nil {
@@ -45,24 +43,24 @@ func (c *JobClient) Build(ctx context.Context, build *types.BuildNumber) (types.
 }
 
 // All returns all available jobs.
-func (c *JobClient) All(ctx context.Context) ([]types.Job, error) {
+func (c *JobClient) All(ctx context.Context) ([]Job, error) {
 	hudson, err := c.Root(ctx)
 
 	if err != nil {
-		return []types.Job{}, err
+		return []Job{}, err
 	}
 
 	jobs, err := c.recursiveFolders(ctx, hudson.Folders)
 
 	if err != nil {
-		return []types.Job{}, err
+		return []Job{}, err
 	}
 
 	return jobs, nil
 }
 
-func (c *JobClient) recursiveFolders(ctx context.Context, folders []types.Folder) ([]types.Job, error) {
-	result := make([]types.Job, 0)
+func (c *JobClient) recursiveFolders(ctx context.Context, folders []Folder) ([]Job, error) {
+	result := make([]Job, 0)
 
 	for _, folder := range folders {
 		switch class := folder.Class; class {
@@ -73,7 +71,7 @@ func (c *JobClient) recursiveFolders(ctx context.Context, folders []types.Folder
 				return nil, err
 			}
 
-			nextFolder := types.Folder{}
+			nextFolder := Folder{}
 
 			if _, err := c.client.Do(req, &nextFolder); err != nil {
 				return result, err
@@ -93,7 +91,7 @@ func (c *JobClient) recursiveFolders(ctx context.Context, folders []types.Folder
 				return nil, err
 			}
 
-			job := types.Job{}
+			job := Job{}
 
 			if _, err := c.client.Do(req, &job); err != nil {
 				return result, err
