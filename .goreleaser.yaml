@@ -4,7 +4,7 @@ version: 2
 builds:
   - id: server
     main: ./cmd/jenkins_exporter
-    binary: jenkins-exporter
+    binary: jenkins_exporter
     env:
       - CGO_ENABLED=0
     ldflags:
