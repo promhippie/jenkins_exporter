@@ -70,7 +70,7 @@ like this to the `docker-compose.yml` file:
 {{< highlight diff >}}
   jenkins_exporter:
 -   image: promhippie/jenkins-exporter:latest
-+   image: promhippie/jenkins-exporter:1.0.0
++   image: promhippie/jenkins-exporter:x.x.x
     restart: always
     environment:
       - JENKINS_EXPORTER_URL=https://jenkins.example.com

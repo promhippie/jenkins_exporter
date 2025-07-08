@@ -1,4 +1,7 @@
-# Changelog for 1.2.0
+# Changelog
+
+
+## 1.2.0
 
 The following sections list the changes for 1.2.0.
 
@@ -25,7 +28,7 @@ The following sections list the changes for 1.2.0.
    https://github.com/promhippie/jenkins_exporter/issues/126
 
 
-# Changelog for 1.1.0
+## 1.1.0
 
 The following sections list the changes for 1.1.0.
 
@@ -64,7 +67,7 @@ The following sections list the changes for 1.1.0.
    https://github.com/promhippie/jenkins_exporter/pull/51
 
 
-# Changelog for 1.0.0
+## 1.0.0
 
 The following sections list the changes for 1.0.0.
 
