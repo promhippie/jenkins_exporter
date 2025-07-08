@@ -57,7 +57,7 @@ tasks:
   build:snapshot:
     desc: Generate a snapshot with goreleaser
     cmds:
-      - goreleaser release --clean --snapshot
+      - goreleaser release --clean --snapshot --skip=announce,publish,validate,sign
 
   build:server:
     desc: Build server component
@@ -80,7 +80,7 @@ tasks:
     desc: Run reloading development server
     cmds:
       - task: build:server
-      - bin/jenkins_exporter
+      - bin/jenkins_exporter --log.level=debug --log.pretty
     watch: true
     method: none
     sources:
