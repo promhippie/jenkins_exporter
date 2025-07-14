@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/promhippie/jenkins_exporter/compare/v2.0.0...v2.1.0) (2025-07-14)
+
+
+### Features
+
+* **deps:** update module github.com/mgechev/revive to v1.11.0 ([5ea442e](https://github.com/promhippie/jenkins_exporter/commit/5ea442e853633e9e1d61976830d9552468cded4a))
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.24.5 ([ff8f4db](https://github.com/promhippie/jenkins_exporter/commit/ff8f4dbfec1a72d07016e982af35280656e53916))
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.2.2 ([831f542](https://github.com/promhippie/jenkins_exporter/commit/831f5420cf7f3c7901c4bc50742e17df8a16739e))
+
 ## [2.0.0](https://github.com/promhippie/jenkins_exporter/compare/v1.2.0...v2.0.0) (2025-07-09)
 
 
