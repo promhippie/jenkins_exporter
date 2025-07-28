@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.0](https://github.com/promhippie/jenkins_exporter/compare/v2.1.0...v2.2.0) (2025-07-28)
+
+
+### Features
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.3.0 ([b477384](https://github.com/promhippie/jenkins_exporter/commit/b477384682fb8b20ae96b6c0a42ee332d7cf7a59))
+
+
+### Miscellaneous
+
+* **deps:** update docker digests ([f7c4cda](https://github.com/promhippie/jenkins_exporter/commit/f7c4cdad273de2245c18c57e91296a2b31d181ca))
+* **deps:** update golang:1.24.5-alpine3.21 docker digest to 42b91b1 ([881533e](https://github.com/promhippie/jenkins_exporter/commit/881533eb2f2f43836243a9b78c86945d1e8fcdaa))
+* **deps:** update golang:1.24.5-alpine3.21 docker digest to 6edc205 ([e6bf944](https://github.com/promhippie/jenkins_exporter/commit/e6bf9445ed94011455cb19a9be69c20644b303a1))
+* **deps:** update golang:1.24.5-alpine3.21 docker digest to 72ff633 ([55ebfe0](https://github.com/promhippie/jenkins_exporter/commit/55ebfe04507da14ce7032b5d155c4d0c21d67236))
+
 ## [2.1.0](https://github.com/promhippie/jenkins_exporter/compare/v2.0.0...v2.1.0) (2025-07-14)
 
 
