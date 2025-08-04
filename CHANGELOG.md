@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.1](https://github.com/promhippie/jenkins_exporter/compare/v2.2.0...v2.2.1) (2025-08-04)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.3.1 ([e9491f9](https://github.com/promhippie/jenkins_exporter/commit/e9491f90e7c1100e6245b50f1f121a7c3b32113e))
+* **deps:** update module github.com/prometheus/client_golang to v1.23.0 ([3e6a94c](https://github.com/promhippie/jenkins_exporter/commit/3e6a94c676f81b07542b4bcd61da47484d20773b))
+
 ## [2.2.0](https://github.com/promhippie/jenkins_exporter/compare/v2.1.0...v2.2.0) (2025-07-28)
 
 
