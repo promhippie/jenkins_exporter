@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/promhippie/jenkins_exporter/compare/v2.2.1...v2.2.2) (2025-08-11)
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.24.6 ([f1f1746](https://github.com/promhippie/jenkins_exporter/commit/f1f1746045b123765629b0ae8f7eabffa3a4e2a6))
+
 ## [2.2.1](https://github.com/promhippie/jenkins_exporter/compare/v2.2.0...v2.2.1) (2025-08-04)
 
 
