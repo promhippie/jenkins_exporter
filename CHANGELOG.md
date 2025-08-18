@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.3](https://github.com/promhippie/jenkins_exporter/compare/v2.2.2...v2.2.3) (2025-08-18)
+
+
+### Bugfixes
+
+* correctly hand over goos/goarch to build task ([fca91d7](https://github.com/promhippie/jenkins_exporter/commit/fca91d7447dae16230b34bba69aafedc9607ae4a))
+* **deps:** update golang docker tag to v1.25.0 ([8c3db9b](https://github.com/promhippie/jenkins_exporter/commit/8c3db9b0213d7e61b4ba41d6fb170775fe503e77))
+* **deps:** update golang:1.25.0-alpine3.21 docker digest to 382d1a7 ([c299535](https://github.com/promhippie/jenkins_exporter/commit/c299535718e1378c1d58a560e426995dad9d1e4c))
+* **deps:** update golang:1.25.0-alpine3.21 docker digest to a92c1ab ([79bca3e](https://github.com/promhippie/jenkins_exporter/commit/79bca3e238d42d871352e828675006af386edce3))
+* **deps:** update golang:1.25.0-alpine3.21 docker digest to c8e1680 ([46c829d](https://github.com/promhippie/jenkins_exporter/commit/46c829d400cdf6a6b5a9d2909276a3588fca300e))
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.4.0 ([3663591](https://github.com/promhippie/jenkins_exporter/commit/3663591513cc3c118baeaf2d763185d828f09e71))
+* **deps:** update module github.com/urfave/cli/v3 to v3.3.9 ([1d186c6](https://github.com/promhippie/jenkins_exporter/commit/1d186c6b5cbc65da2667afc4f72d5a6dde1d0e92))
+* **deps:** update module github.com/urfave/cli/v3 to v3.4.0 ([7524491](https://github.com/promhippie/jenkins_exporter/commit/752449165594f1f3f39585ea1feaf76ec9b6742e))
+* **deps:** update module github.com/urfave/cli/v3 to v3.4.1 ([e620a1c](https://github.com/promhippie/jenkins_exporter/commit/e620a1cc0da23e2e7de5e3cbf8d369c798b69fd9))
+
 ## [2.2.2](https://github.com/promhippie/jenkins_exporter/compare/v2.2.1...v2.2.2) (2025-08-11)
 
 
