@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.4](https://github.com/promhippie/jenkins_exporter/compare/v2.2.3...v2.2.4) (2025-08-25)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/stretchr/testify to v1.11.0 ([509a1c4](https://github.com/promhippie/jenkins_exporter/commit/509a1c40523a44ef7d7054bdb5f152b3f809f0b5))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([982095b](https://github.com/promhippie/jenkins_exporter/commit/982095b2351ca21aea30b23f62c392c5bf68a70a))
+
 ## [2.2.3](https://github.com/promhippie/jenkins_exporter/compare/v2.2.2...v2.2.3) (2025-08-18)
 
 
