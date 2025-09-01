@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.5](https://github.com/promhippie/jenkins_exporter/compare/v2.2.4...v2.2.5) (2025-09-01)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/go-chi/chi/v5 to v5.2.3 ([b1b7e92](https://github.com/promhippie/jenkins_exporter/commit/b1b7e92bb65899eb961240321a16239ccaf9f966))
+* **deps:** update module github.com/mgechev/revive to v1.12.0 ([e2456f6](https://github.com/promhippie/jenkins_exporter/commit/e2456f6437a2c93cd33d963bf46402f98ab5a69f))
+* **deps:** update module github.com/stretchr/testify to v1.11.1 ([93008ed](https://github.com/promhippie/jenkins_exporter/commit/93008ed01eeef15609736137c0d9f90ee20ce5ab))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([79f9738](https://github.com/promhippie/jenkins_exporter/commit/79f9738aac077b20bf5080effc6b6dda321e82bb))
+
 ## [2.2.4](https://github.com/promhippie/jenkins_exporter/compare/v2.2.3...v2.2.4) (2025-08-25)
 
 
