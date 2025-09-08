@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.6](https://github.com/promhippie/jenkins_exporter/compare/v2.2.5...v2.2.6) (2025-09-08)
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.25.1 ([68c5df3](https://github.com/promhippie/jenkins_exporter/commit/68c5df32cd0defc62be0dbe2f348fffbcd37352c))
+* **deps:** update golang:1.25.1-alpine3.21 docker digest to 331bde4 ([8899119](https://github.com/promhippie/jenkins_exporter/commit/8899119268157f25ffe8337cc31f09d38d9b9680))
+* **deps:** update golang:1.25.1-alpine3.21 docker digest to a887c10 ([b617f09](https://github.com/promhippie/jenkins_exporter/commit/b617f09996903eea2f52809596f793188e8ffb56))
+* **deps:** update module github.com/prometheus/client_golang to v1.23.1 ([92c17fa](https://github.com/promhippie/jenkins_exporter/commit/92c17faec89bc97b9ec6ac631ff89927259d6fe9))
+* **deps:** update module github.com/prometheus/client_golang to v1.23.2 ([f6b75a6](https://github.com/promhippie/jenkins_exporter/commit/f6b75a6fe78cf70b7afa28b317dece50f0f5175b))
+* **deps:** update module github.com/prometheus/exporter-toolkit to v0.14.1 ([d019d80](https://github.com/promhippie/jenkins_exporter/commit/d019d80e3116c15ba9649c1e3ae2aa62182a952a))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([72316e1](https://github.com/promhippie/jenkins_exporter/commit/72316e1f77384eab66b04f64792935ca96611cbf))
+
 ## [2.2.5](https://github.com/promhippie/jenkins_exporter/compare/v2.2.4...v2.2.5) (2025-09-01)
 
 
