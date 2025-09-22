@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.7](https://github.com/promhippie/jenkins_exporter/compare/v2.2.6...v2.2.7) (2025-09-22)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.5.0 ([3f89da2](https://github.com/promhippie/jenkins_exporter/commit/3f89da2e7eccdee379880ea7ece65bf5ce26910a))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([55fe836](https://github.com/promhippie/jenkins_exporter/commit/55fe8369ab81f8baa56b35acaa6258d695723a5b))
+* **flake:** updated lockfile [skip ci] ([90ce75c](https://github.com/promhippie/jenkins_exporter/commit/90ce75c1f5ab4cf6ea00dc49707f6fe182e21456))
+* move from baltorepo to cloudsmith ([c7dd380](https://github.com/promhippie/jenkins_exporter/commit/c7dd3804e9cae1a7c47594b69c82f1dd9847ab56))
+
 ## [2.2.6](https://github.com/promhippie/jenkins_exporter/compare/v2.2.5...v2.2.6) (2025-09-08)
 
 
