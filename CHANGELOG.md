@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.9](https://github.com/promhippie/jenkins_exporter/compare/v2.2.8...v2.2.9) (2025-10-20)
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.25.3 ([adacbcc](https://github.com/promhippie/jenkins_exporter/commit/adacbcc49a270b5ff1d8943dfff6c28453a784da))
+* **deps:** update golang:1.25.3-alpine3.21 docker digest to 0c9f3e0 ([3e7bdd9](https://github.com/promhippie/jenkins_exporter/commit/3e7bdd9b91dfb843320bd393f35ed0d9049d17ec))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([c4c9b32](https://github.com/promhippie/jenkins_exporter/commit/c4c9b3221fd336a97822f0f4afdc14e1ebdc7bd0))
+
 ## [2.2.8](https://github.com/promhippie/jenkins_exporter/compare/v2.2.7...v2.2.8) (2025-10-13)
 
 
