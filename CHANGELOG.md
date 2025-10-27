@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.10](https://github.com/promhippie/jenkins_exporter/compare/v2.2.9...v2.2.10) (2025-10-27)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/prometheus/exporter-toolkit to v0.15.0 ([23bd7e4](https://github.com/promhippie/jenkins_exporter/commit/23bd7e4831399720f576b7ec96c6355ddad42493))
+* **deps:** update module github.com/urfave/cli/v3 to v3.5.0 ([4ec2136](https://github.com/promhippie/jenkins_exporter/commit/4ec2136f65e4b7f2011c8c2e8b2afb8360dbaf33))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([e75f6ff](https://github.com/promhippie/jenkins_exporter/commit/e75f6ff2b3fa40288cbc3e7498530d8db5dc9806))
+
 ## [2.2.9](https://github.com/promhippie/jenkins_exporter/compare/v2.2.8...v2.2.9) (2025-10-20)
 
 
