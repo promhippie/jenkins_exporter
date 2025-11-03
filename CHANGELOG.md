@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.11](https://github.com/promhippie/jenkins_exporter/compare/v2.2.10...v2.2.11) (2025-11-03)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.6.0 ([6f459b0](https://github.com/promhippie/jenkins_exporter/commit/6f459b0e180d647be418b459558f1c624928ce05))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([86b559a](https://github.com/promhippie/jenkins_exporter/commit/86b559a644a90b8906e07f1aaeea583dc3c034b2))
+
 ## [2.2.10](https://github.com/promhippie/jenkins_exporter/compare/v2.2.9...v2.2.10) (2025-10-27)
 
 
