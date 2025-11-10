@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.12](https://github.com/promhippie/jenkins_exporter/compare/v2.2.11...v2.2.12) (2025-11-10)
+
+
+### Bugfixes
+
+* **deps:** update golang docker tag to v1.25.4 ([a9fecc2](https://github.com/promhippie/jenkins_exporter/commit/a9fecc2dd45e201f09d77ba3c0b78c7f32e8098b))
+* **deps:** update golang:1.25.4-alpine3.21 docker digest to 3289aac ([492f19e](https://github.com/promhippie/jenkins_exporter/commit/492f19ebcf8764a75fad3ef76a280a397cbd48b6))
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.6.1 ([ab7b086](https://github.com/promhippie/jenkins_exporter/commit/ab7b08610f5058e71f9a2d6563cc74ba27970957))
+* **deps:** update module github.com/urfave/cli/v3 to v3.6.0 ([90ac16f](https://github.com/promhippie/jenkins_exporter/commit/90ac16fe442042c71a8041d8eda424641e3ededa))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([0b72a89](https://github.com/promhippie/jenkins_exporter/commit/0b72a89c4e4c76fff49f7e50dbf1585b7c3afd32))
+
 ## [2.2.11](https://github.com/promhippie/jenkins_exporter/compare/v2.2.10...v2.2.11) (2025-11-03)
 
 
