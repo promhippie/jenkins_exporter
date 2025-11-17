@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.13](https://github.com/promhippie/jenkins_exporter/compare/v2.2.12...v2.2.13) (2025-11-17)
+
+
+### Bugfixes
+
+* **deps:** update module github.com/golangci/golangci-lint/v2 to v2.6.2 ([e969924](https://github.com/promhippie/jenkins_exporter/commit/e9699242aae390a1a2f8dccf5173a0f1b1189930))
+* **deps:** update module github.com/urfave/cli/v3 to v3.6.1 ([cd10076](https://github.com/promhippie/jenkins_exporter/commit/cd10076a354bf1abe12a715537e1384086703de7))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([4539336](https://github.com/promhippie/jenkins_exporter/commit/4539336535d6a67d700c971e3e660992f60d19c0))
+
 ## [2.2.12](https://github.com/promhippie/jenkins_exporter/compare/v2.2.11...v2.2.12) (2025-11-10)
 
 
