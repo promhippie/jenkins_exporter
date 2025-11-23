@@ -18,6 +18,6 @@ secretGenerator:
 images:
   - name: jenkins-exporter
     newName: quay.io/promhippie/jenkins-exporter
-    newTag: latest@sha256:f23713c61ef68c19ecd768e0d6fa74b7e135c5bdaebbe35f263cd113157d835f
+    newTag: latest@sha256:723f944e7a22449aa635af0ac7728b6fac814faf4f0d02a67378b0954ad8f650
 
 ...
