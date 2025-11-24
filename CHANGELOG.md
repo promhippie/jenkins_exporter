@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.2.14](https://github.com/promhippie/jenkins_exporter/compare/v2.2.13...v2.2.14) (2025-11-24)
+
+
+### Bugfixes
+
+* **deps:** pin quay.io/promhippie/jenkins-exporter docker tag to c1699fd ([de31ccb](https://github.com/promhippie/jenkins_exporter/commit/de31ccbee4350a443dd94047b4917e564e3bb6a0))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 154529f ([24e86c9](https://github.com/promhippie/jenkins_exporter/commit/24e86c976259c91d1270504f2d45ea6a2bba8be6))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 3c300da ([ce3bf26](https://github.com/promhippie/jenkins_exporter/commit/ce3bf26aa59c9f9d05eea142a6422590d54440da))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 57bf097 ([4776a43](https://github.com/promhippie/jenkins_exporter/commit/4776a43555590210f2ea4e996db9ea1636695135))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 57bf421 ([ac33379](https://github.com/promhippie/jenkins_exporter/commit/ac33379d5005c70c4cd08685e504dba43340ad39))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 5bec177 ([20ee56f](https://github.com/promhippie/jenkins_exporter/commit/20ee56fd08a737f7c8f6fb2b27b66db0c00301dc))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 723f944 ([adf5db9](https://github.com/promhippie/jenkins_exporter/commit/adf5db93fc4791975db1db89783b4ae3f13e4b36))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 8909567 ([be7c96b](https://github.com/promhippie/jenkins_exporter/commit/be7c96bdafcdf07091a097129b6c95de8340362b))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to 9be35d1 ([30886ea](https://github.com/promhippie/jenkins_exporter/commit/30886ea80ad3a5f9859e8f5160245c505a0e2aaa))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to a62a28c ([b3e483c](https://github.com/promhippie/jenkins_exporter/commit/b3e483cd40ba83fcd161c04266ff2c6abdcedba4))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to a9a47dd ([c458266](https://github.com/promhippie/jenkins_exporter/commit/c4582669e0a47a56fe6ab40a9922429002da86f5))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to ac7a2f6 ([744de08](https://github.com/promhippie/jenkins_exporter/commit/744de085df44253777fe22ae7b124dd83c29a5b7))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to c929d94 ([b04c658](https://github.com/promhippie/jenkins_exporter/commit/b04c65833fdf316ac00747a3b935a0817856c0ff))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to d38ac94 ([52f06be](https://github.com/promhippie/jenkins_exporter/commit/52f06be810a622ba960b27537f98f0ab31a42c1a))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to d7ba205 ([d81672b](https://github.com/promhippie/jenkins_exporter/commit/d81672bf193d4c06287ae3ad73988fb39ad31309))
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to f23713c ([48ba7db](https://github.com/promhippie/jenkins_exporter/commit/48ba7dbdb1c7b1fe5d991490d09978a5d2f88e35))
+
+
+### Miscellaneous
+
+* **deps:** bump golang.org/x/crypto from 0.44.0 to 0.45.0 ([551624a](https://github.com/promhippie/jenkins_exporter/commit/551624aca6a9b57923615f287fe583500deddcec))
+* **flake:** updated lockfile [skip ci] ([b21e528](https://github.com/promhippie/jenkins_exporter/commit/b21e5280eb9c7b087b5806b37bfbdac51fddf712))
+
 ## [2.2.13](https://github.com/promhippie/jenkins_exporter/compare/v2.2.12...v2.2.13) (2025-11-17)
 
 
