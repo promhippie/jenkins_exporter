@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.15](https://github.com/promhippie/jenkins_exporter/compare/v2.2.14...v2.2.15) (2025-12-01)
+
+
+### Bugfixes
+
+* **deps:** update quay.io/promhippie/jenkins-exporter:latest docker digest to b00cdf4 ([b14b243](https://github.com/promhippie/jenkins_exporter/commit/b14b2439a263d302b6012c36cfad226df8d39914))
+
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([3ce753a](https://github.com/promhippie/jenkins_exporter/commit/3ce753a47359378664906f8af45be6b0279a3d32))
+
 ## [2.2.14](https://github.com/promhippie/jenkins_exporter/compare/v2.2.13...v2.2.14) (2025-11-24)
 
 
