@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.3.0](https://github.com/promhippie/jenkins_exporter/compare/v2.2.15...v2.3.0) (2025-12-08)
+
+
+### Features
+
+* **minor:** update alpine docker tag to v3.23 ([#232](https://github.com/promhippie/jenkins_exporter/issues/232)) ([1791e5d](https://github.com/promhippie/jenkins_exporter/commit/1791e5d31866b37c111b1ce4af3a47821d69c02e))
+
+
+### Bugfixes
+
+* **patch:** update golang docker tag to v1.25.5 ([#231](https://github.com/promhippie/jenkins_exporter/issues/231)) ([37a59ec](https://github.com/promhippie/jenkins_exporter/commit/37a59ec8e187d7d7c39d3bd5e0be0885d6f54c23))
+
+
+### Miscellaneous
+
+* drop issue and pull request template ([ebc1782](https://github.com/promhippie/jenkins_exporter/commit/ebc178260f646566c492f672b9442041c6b2f87f))
+* **flake:** updated lockfile [skip ci] ([4c91631](https://github.com/promhippie/jenkins_exporter/commit/4c916316538b7e22ccf8ab1dbe87f66af8acc60b))
+* just format some yaml comment ([c7669e8](https://github.com/promhippie/jenkins_exporter/commit/c7669e88905ee93ea98b0783e4d148bffa9cd647))
+
 ## [2.2.15](https://github.com/promhippie/jenkins_exporter/compare/v2.2.14...v2.2.15) (2025-12-01)
 
 
