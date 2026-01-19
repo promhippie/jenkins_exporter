@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.3.3](https://github.com/promhippie/jenkins_exporter/compare/v2.3.2...v2.3.3) (2026-01-19)
+
+### Bugfixes
+
+* **patch:** update module github.com/go-chi/chi/v5 to v5.2.4 ([#250](https://github.com/promhippie/jenkins_exporter/issues/250)) ([9cebeca](https://github.com/promhippie/jenkins_exporter/commit/9cebecace0588fa23f72d2b2a7f0cd24bb19ab51))
+* **patch:** update module github.com/urfave/cli/v3 to v3.6.2 ([#252](https://github.com/promhippie/jenkins_exporter/issues/252)) ([f9f1f21](https://github.com/promhippie/jenkins_exporter/commit/f9f1f210cbb5cc3b280278800869376c28fd645e))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([4cf8134](https://github.com/promhippie/jenkins_exporter/commit/4cf8134247117d6c999bda6bec765b44ed63e9d2))
+
 ## [2.3.2](https://github.com/promhippie/jenkins_exporter/compare/v2.3.1...v2.3.2) (2026-01-12)
 
 ### Bugfixes
