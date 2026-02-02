@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.3.4](https://github.com/promhippie/jenkins_exporter/compare/v2.3.3...v2.3.4) (2026-02-02)
+
+### Bugfixes
+
+* **deps:** update alpine:3.23 docker digest to 2510918 ([#254](https://github.com/promhippie/jenkins_exporter/issues/254)) ([bd7ba67](https://github.com/promhippie/jenkins_exporter/commit/bd7ba673e8e3f387b0f2c7d6b0febe6b00a1b44f))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([e37afc7](https://github.com/promhippie/jenkins_exporter/commit/e37afc7dc0b0f216d5739e84f7b8fca614f5ee4c))
+* **flake:** updated lockfile [skip ci] ([3f784fc](https://github.com/promhippie/jenkins_exporter/commit/3f784fc45022fc5bd2382f4b514abb39957cf344))
+
 ## [2.3.3](https://github.com/promhippie/jenkins_exporter/compare/v2.3.2...v2.3.3) (2026-01-19)
 
 ### Bugfixes
