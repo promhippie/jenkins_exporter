@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.3.5](https://github.com/promhippie/jenkins_exporter/compare/v2.3.4...v2.3.5) (2026-02-09)
+
+### Bugfixes
+
+* **patch:** update module github.com/go-chi/chi/v5 to v5.2.5 ([#256](https://github.com/promhippie/jenkins_exporter/issues/256)) ([60920f1](https://github.com/promhippie/jenkins_exporter/commit/60920f17168f36171cfa13cfbf3497101b3ea762))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([7c3363c](https://github.com/promhippie/jenkins_exporter/commit/7c3363cd6d77dfee70148e74384a7612e3e584f4))
+
 ## [2.3.4](https://github.com/promhippie/jenkins_exporter/compare/v2.3.3...v2.3.4) (2026-02-02)
 
 ### Bugfixes
