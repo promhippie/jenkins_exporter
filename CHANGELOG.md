@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/promhippie/jenkins_exporter/compare/v2.3.5...v2.4.0) (2026-03-02)
+
+### Features
+
+* **minor:** update module github.com/urfave/cli/v3 to v3.7.0 ([#258](https://github.com/promhippie/jenkins_exporter/issues/258)) ([ce1ed60](https://github.com/promhippie/jenkins_exporter/commit/ce1ed60412de6d5f269e1b012c5b0afc8dfc0850))
+
+### Miscellaneous
+
+* enable skip-package-name-collision-with-go-std for revive ([0de4115](https://github.com/promhippie/jenkins_exporter/commit/0de41159cf4440b5d6d2f0c81cb2923dc9ffab7e))
+* **flake:** updated lockfile [skip ci] ([1e9714e](https://github.com/promhippie/jenkins_exporter/commit/1e9714e41bd41285091c6fa5cf2b3374d4a5f47f))
+* **flake:** updated lockfile [skip ci] ([79b5cc9](https://github.com/promhippie/jenkins_exporter/commit/79b5cc928b1411b5d021cff54539ce2946b5c4ae))
+* **flake:** updated lockfile [skip ci] ([53f98d2](https://github.com/promhippie/jenkins_exporter/commit/53f98d2d444eeeb7c967535d8d352a17a8704b29))
+* replace nixfmt package ([ba9253c](https://github.com/promhippie/jenkins_exporter/commit/ba9253cfa5eb862364e0fbb3dc78b64732d9c14e))
+
 ## [2.3.5](https://github.com/promhippie/jenkins_exporter/compare/v2.3.4...v2.3.5) (2026-02-09)
 
 ### Bugfixes
