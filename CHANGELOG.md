@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.5.0](https://github.com/promhippie/jenkins_exporter/compare/v2.4.0...v2.5.0) (2026-03-30)
+
+### Features
+
+* **minor:** update module github.com/urfave/cli/v3 to v3.8.0 ([#267](https://github.com/promhippie/jenkins_exporter/issues/267)) ([94b83b7](https://github.com/promhippie/jenkins_exporter/commit/94b83b7b7c04f5ac7ad07f759db1950dc1f2c2ec))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([4988ff2](https://github.com/promhippie/jenkins_exporter/commit/4988ff2bbe1094d9d1c1bc6b945a126f90b76a5c))
+* **flake:** updated lockfile [skip ci] ([2fa58ca](https://github.com/promhippie/jenkins_exporter/commit/2fa58ca798a5451933ed23f1a9e294bcf40d0f94))
+* **flake:** updated lockfile [skip ci] ([9dd34cd](https://github.com/promhippie/jenkins_exporter/commit/9dd34cde0d1ad137e2593789a0882d45d767596a))
+* **flake:** updated lockfile [skip ci] ([982c2af](https://github.com/promhippie/jenkins_exporter/commit/982c2af47b7402338ec8902d2c2d1a92c9621fd6))
+
 ## [2.4.0](https://github.com/promhippie/jenkins_exporter/compare/v2.3.5...v2.4.0) (2026-03-02)
 
 ### Features
