@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.6.0](https://github.com/promhippie/jenkins_exporter/compare/v2.5.0...v2.6.0) (2026-04-06)
+
+### Features
+
+* **minor:** update module github.com/prometheus/exporter-toolkit to v0.16.0 ([#268](https://github.com/promhippie/jenkins_exporter/issues/268)) ([01ebb96](https://github.com/promhippie/jenkins_exporter/commit/01ebb961febdac00225e2ba2410a3476e2c3b4d8))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([3714e33](https://github.com/promhippie/jenkins_exporter/commit/3714e33207de125f069e64e6fd7a08f21fcca3ae))
+
 ## [2.5.0](https://github.com/promhippie/jenkins_exporter/compare/v2.4.0...v2.5.0) (2026-03-30)
 
 ### Features
