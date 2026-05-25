@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.8.0](https://github.com/promhippie/jenkins_exporter/compare/v2.7.0...v2.8.0) (2026-05-25)
+
+### Features
+
+* **minor:** update module github.com/go-chi/chi/v5 to v5.3.0 ([#279](https://github.com/promhippie/jenkins_exporter/issues/279)) ([740f367](https://github.com/promhippie/jenkins_exporter/commit/740f3671fe1b395b79fec9f4118132762d16b420))
+* upgrade required go version to 1.26 ([38cca2e](https://github.com/promhippie/jenkins_exporter/commit/38cca2e150018de7d96fea317a16cad265a8d64f))
+
+### Bugfixes
+
+* **deps:** pin golang docker tag to 91eda97 ([#280](https://github.com/promhippie/jenkins_exporter/issues/280)) ([1b6be6b](https://github.com/promhippie/jenkins_exporter/commit/1b6be6be7e095820ceeed8fd0b331bf10484d0b2))
+* enforce 1.26.3 for docker image ([f8fefa9](https://github.com/promhippie/jenkins_exporter/commit/f8fefa9150cc362e924d334992807c85966d8d71))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([2cb006c](https://github.com/promhippie/jenkins_exporter/commit/2cb006c48ac7b418101ef047a95177f47eb5848c))
+* switch flake input to 25.11 release ([2fdbd33](https://github.com/promhippie/jenkins_exporter/commit/2fdbd3340147601d8d6fc336db4955f3cee9199f))
+
 ## [2.7.0](https://github.com/promhippie/jenkins_exporter/compare/v2.6.1...v2.7.0) (2026-05-18)
 
 ### Features
