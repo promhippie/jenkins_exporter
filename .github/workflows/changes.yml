@@ -30,13 +30,13 @@ jobs:
 
       - name: Checkout source
         if: github.event_name != 'pull_request'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           token: ${{ steps.token.outputs.token }}
 
       - name: PR checkout
         if: github.event_name == 'pull_request'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup golang
         uses: actions/setup-go@v6
@@ -44,7 +44,7 @@ jobs:
           go-version-file: go.mod
 
       - name: Setup task
-        uses: arduino/setup-task@v2
+        uses: arduino/setup-task@v3.0.0
         with:
           version: 3.x
           repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -82,13 +82,13 @@ jobs:
 
       - name: Checkout source
         if: github.event_name != 'pull_request'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           token: ${{ steps.token.outputs.token }}
 
       - name: PR checkout
         if: github.event_name == 'pull_request'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup golang
         uses: actions/setup-go@v6
@@ -96,7 +96,7 @@ jobs:
           go-version-file: go.mod
 
       - name: Setup task
-        uses: arduino/setup-task@v2
+        uses: arduino/setup-task@v3.0.0
         with:
           version: 3.x
           repo-token: ${{ secrets.GITHUB_TOKEN }}
