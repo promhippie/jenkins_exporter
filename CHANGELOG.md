@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.9.0](https://github.com/promhippie/jenkins_exporter/compare/v2.8.0...v2.9.0) (2026-07-06)
+
 ## [2.8.0](https://github.com/promhippie/jenkins_exporter/compare/v2.7.0...v2.8.0) (2026-05-25)
 
 ### Features
