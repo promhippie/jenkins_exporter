@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.11.0](https://github.com/promhippie/jenkins_exporter/compare/v2.10.0...v2.11.0) (2026-08-10)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.21.0 ([52f3939](https://github.com/promhippie/jenkins_exporter/commit/52f39398df29d2bece0933de11b526a2012cf977))
+* **minor:** update dependency golangci-lint to v2.12.2 ([1413c98](https://github.com/promhippie/jenkins_exporter/commit/1413c98e153bbccd698e333faa67667350167586))
+* restructure repo and build processes ([1d2e037](https://github.com/promhippie/jenkins_exporter/commit/1d2e037db8491773f774475bce3c6d448e2fc1b3))
+
+### Bugfixes
+
+* **patch:** update dependency cosign to v3.1.3 ([#299](https://github.com/promhippie/jenkins_exporter/issues/299)) ([ec5e3f0](https://github.com/promhippie/jenkins_exporter/commit/ec5e3f0cd2b4fbe9a2eeee2ff5371e2bac3c7794))
+
 ## [2.10.0](https://github.com/promhippie/jenkins_exporter/compare/v2.9.1...v2.10.0) (2026-07-27)
 
 ## [2.9.1](https://github.com/promhippie/jenkins_exporter/compare/v2.9.0...v2.9.1) (2026-07-13)
