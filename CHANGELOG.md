@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.12.0](https://github.com/promhippie/jenkins_exporter/compare/v2.11.0...v2.12.0) (2026-08-17)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.22.0 ([#302](https://github.com/promhippie/jenkins_exporter/issues/302)) ([cc4a784](https://github.com/promhippie/jenkins_exporter/commit/cc4a7849a4231df75fcf99c403e92740237fb129))
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.23.0 ([#306](https://github.com/promhippie/jenkins_exporter/issues/306)) ([0e6321e](https://github.com/promhippie/jenkins_exporter/commit/0e6321e3aeb055275ebc05e5262cf16aaecbc27c))
+* **minor:** update dependency hugo-extended to v0.165.0 ([#303](https://github.com/promhippie/jenkins_exporter/issues/303)) ([8b83f6e](https://github.com/promhippie/jenkins_exporter/commit/8b83f6ec61ae663a21a49ee8a553205e624cdaad))
+* **minor:** update module github.com/urfave/cli/v3 to v3.11.0 ([#307](https://github.com/promhippie/jenkins_exporter/issues/307)) ([7daa1cf](https://github.com/promhippie/jenkins_exporter/commit/7daa1cf3274f47a221d9f793a202902f431b0121))
+
+### Bugfixes
+
+* **deps:** update golang:1.26.6-alpine docker digest to 3889b42 ([#308](https://github.com/promhippie/jenkins_exporter/issues/308)) ([17224f3](https://github.com/promhippie/jenkins_exporter/commit/17224f3bf4b2e8484acb3ba6b61af9559116bb97))
+* **patch:** update dependency go to v1.26.6 ([#304](https://github.com/promhippie/jenkins_exporter/issues/304)) ([40d92a8](https://github.com/promhippie/jenkins_exporter/commit/40d92a8f659085ff253f71e7937be35fef7e1e0b))
+* **patch:** update dependency pre-commit to v4.6.2 ([#301](https://github.com/promhippie/jenkins_exporter/issues/301)) ([d97e34d](https://github.com/promhippie/jenkins_exporter/commit/d97e34da84052e92dbb7e6dfa02ae14e1373b33a))
+* **patch:** update golang docker tag to v1.26.6 ([#305](https://github.com/promhippie/jenkins_exporter/issues/305)) ([eb6fb59](https://github.com/promhippie/jenkins_exporter/commit/eb6fb59cc40b5c415b4a3478eaca7c41efeb03e1))
+
 ## [2.11.0](https://github.com/promhippie/jenkins_exporter/compare/v2.10.0...v2.11.0) (2026-08-10)
 
 ### Features
