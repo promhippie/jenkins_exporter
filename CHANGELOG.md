@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.13.0](https://github.com/promhippie/jenkins_exporter/compare/v2.12.0...v2.13.0) (2026-08-24)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.24.0 ([#310](https://github.com/promhippie/jenkins_exporter/issues/310)) ([5a56c3f](https://github.com/promhippie/jenkins_exporter/commit/5a56c3fb486e079eb67a195b51389787a1f37111))
+* **minor:** update dependency golangci-lint to v2.13.0 ([#315](https://github.com/promhippie/jenkins_exporter/issues/315)) ([7288e41](https://github.com/promhippie/jenkins_exporter/commit/7288e410044b08f702c1253654caca28ddcba886))
+* **minor:** update dependency task to v3.53.1 ([#311](https://github.com/promhippie/jenkins_exporter/issues/311)) ([731d32d](https://github.com/promhippie/jenkins_exporter/commit/731d32d3b07ff83eb393952f14eabcfa19e56b79))
+* **minor:** update golang docker tag to v1.27.0 ([#314](https://github.com/promhippie/jenkins_exporter/issues/314)) ([4cb91f6](https://github.com/promhippie/jenkins_exporter/commit/4cb91f6958fc123a3fb0011c000cd46177d3ad60))
+* **minor:** update module github.com/stretchr/testify to v1.12.0 ([#309](https://github.com/promhippie/jenkins_exporter/issues/309)) ([a310720](https://github.com/promhippie/jenkins_exporter/commit/a3107203a6c88bc8d4dcf3c5453062412bbfdae9))
+
+### Bugfixes
+
+* **patch:** update dependency golangci-lint to v2.13.1 ([#317](https://github.com/promhippie/jenkins_exporter/issues/317)) ([d86ba13](https://github.com/promhippie/jenkins_exporter/commit/d86ba133eafe7ba913756b8c49fdbd5b81a3eb81))
+* **patch:** update module github.com/go-chi/chi/v5 to v5.3.2 ([#316](https://github.com/promhippie/jenkins_exporter/issues/316)) ([d282a86](https://github.com/promhippie/jenkins_exporter/commit/d282a864afecd8dbd52e43c0ef271c37ce864158))
+* **patch:** update module github.com/stretchr/testify to v1.12.1 ([#312](https://github.com/promhippie/jenkins_exporter/issues/312)) ([07e3dc2](https://github.com/promhippie/jenkins_exporter/commit/07e3dc2df498df313787d02262377beb049777c7))
+
 ## [2.12.0](https://github.com/promhippie/jenkins_exporter/compare/v2.11.0...v2.12.0) (2026-08-17)
 
 ### Features
