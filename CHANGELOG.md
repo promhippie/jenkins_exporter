@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.14.0](https://github.com/promhippie/jenkins_exporter/compare/v2.13.0...v2.14.0) (2026-08-31)
+
+### Features
+
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.25.0 ([#320](https://github.com/promhippie/jenkins_exporter/issues/320)) ([d20e3fd](https://github.com/promhippie/jenkins_exporter/commit/d20e3fd2a719dff26592a50e45f8a930e87c0ab0))
+* **minor:** update dependency github:cloudsmith-io/cloudsmith-cli to v1.26.0 ([#322](https://github.com/promhippie/jenkins_exporter/issues/322)) ([7b607eb](https://github.com/promhippie/jenkins_exporter/commit/7b607eb7b9c5404216bc99ed6ca8e3d8ff1fb29d))
+* **minor:** update dependency go to v1.27.0 ([#313](https://github.com/promhippie/jenkins_exporter/issues/313)) ([eb5fc55](https://github.com/promhippie/jenkins_exporter/commit/eb5fc55ec71b3264021b331c123804317e1cf682))
+* **minor:** update dependency goreleaser to v2.18.0 ([#318](https://github.com/promhippie/jenkins_exporter/issues/318)) ([b6df028](https://github.com/promhippie/jenkins_exporter/commit/b6df028326f8fe1670fa23e4d59c8ea6a5cf6699))
+* **minor:** update module github.com/prometheus/exporter-toolkit to v0.19.0 ([#321](https://github.com/promhippie/jenkins_exporter/issues/321)) ([46212de](https://github.com/promhippie/jenkins_exporter/commit/46212de460fbea1978c6313aecae9da95dd5858b))
+
+### Bugfixes
+
+* **patch:** update dependency golangci-lint to v2.13.2 ([#323](https://github.com/promhippie/jenkins_exporter/issues/323)) ([ed884ae](https://github.com/promhippie/jenkins_exporter/commit/ed884ae309e839373d9cf8f175d4077aedcc069c))
+
 ## [2.13.0](https://github.com/promhippie/jenkins_exporter/compare/v2.12.0...v2.13.0) (2026-08-24)
 
 ### Features
