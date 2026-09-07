@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.14.1](https://github.com/promhippie/jenkins_exporter/compare/v2.14.0...v2.14.1) (2026-09-07)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.1-alpine docker digest to cf6fca6 ([#327](https://github.com/promhippie/jenkins_exporter/issues/327)) ([5143030](https://github.com/promhippie/jenkins_exporter/commit/5143030e549e562bb7a70c2c28c073c08c1dd23a))
+* **patch:** update dependency go to v1.27.1 ([#325](https://github.com/promhippie/jenkins_exporter/issues/325)) ([9666078](https://github.com/promhippie/jenkins_exporter/commit/9666078439a7e1282850eb058a35072ff71b3648))
+* **patch:** update dependency goreleaser to v2.18.1 ([#328](https://github.com/promhippie/jenkins_exporter/issues/328)) ([c0c829a](https://github.com/promhippie/jenkins_exporter/commit/c0c829af48dc22b4db93496a09ced006fb63769f))
+* **patch:** update golang docker tag to v1.27.1 ([#326](https://github.com/promhippie/jenkins_exporter/issues/326)) ([ebbccd4](https://github.com/promhippie/jenkins_exporter/commit/ebbccd44aed492d6bba42cdce624d3f2d44b8a8b))
+
 ## [2.14.0](https://github.com/promhippie/jenkins_exporter/compare/v2.13.0...v2.14.0) (2026-08-31)
 
 ### Features
