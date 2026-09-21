@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.15.0](https://github.com/promhippie/jenkins_exporter/compare/v2.14.1...v2.15.0) (2026-09-21)
+
+### Features
+
+* **minor:** update module github.com/urfave/cli/v3 to v3.12.0 ([#332](https://github.com/promhippie/jenkins_exporter/issues/332)) ([bf831e4](https://github.com/promhippie/jenkins_exporter/commit/bf831e41b518f1f87af109e7c1e25060ea99f7d0))
+* **minor:** update module github.com/urfave/cli/v3 to v3.13.0 ([#337](https://github.com/promhippie/jenkins_exporter/issues/337)) ([d083b70](https://github.com/promhippie/jenkins_exporter/commit/d083b70968d1a7b17d3ab6b533671c7196553c53))
+
+### Bugfixes
+
+* **deps:** update alpine:3.24 docker digest to 294b683 ([#336](https://github.com/promhippie/jenkins_exporter/issues/336)) ([d263b99](https://github.com/promhippie/jenkins_exporter/commit/d263b9909c819bd6527ca9bba55aae0e8ad7183c))
+* **deps:** update docker digests ([#334](https://github.com/promhippie/jenkins_exporter/issues/334)) ([b3045de](https://github.com/promhippie/jenkins_exporter/commit/b3045de2b39d1d0869be095382e0a61cdaddc876))
+* **deps:** update docker digests ([#335](https://github.com/promhippie/jenkins_exporter/issues/335)) ([8238c4d](https://github.com/promhippie/jenkins_exporter/commit/8238c4d322bf1c51d47f886deaaa908ff42238c4))
+
 ## [2.14.1](https://github.com/promhippie/jenkins_exporter/compare/v2.14.0...v2.14.1) (2026-09-07)
 
 ### Bugfixes
