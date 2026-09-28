@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.16.0](https://github.com/promhippie/jenkins_exporter/compare/v2.15.0...v2.16.0) (2026-09-28)
+
+### Features
+
+* **minor:** update module github.com/prometheus/exporter-toolkit to v0.20.0 ([#339](https://github.com/promhippie/jenkins_exporter/issues/339)) ([294562b](https://github.com/promhippie/jenkins_exporter/commit/294562b60ec9ca67f638e1fd675bd5da27b59859))
+
+### Bugfixes
+
+* **deps:** update golang:1.27.1-alpine docker digest to 8a5910f ([#338](https://github.com/promhippie/jenkins_exporter/issues/338)) ([5639185](https://github.com/promhippie/jenkins_exporter/commit/563918525d406db1f986fe608ae8d81d1d929d29))
+
 ## [2.15.0](https://github.com/promhippie/jenkins_exporter/compare/v2.14.1...v2.15.0) (2026-09-21)
 
 ### Features
