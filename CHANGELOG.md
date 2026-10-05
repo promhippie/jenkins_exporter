@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.17.0](https://github.com/promhippie/jenkins_exporter/compare/v2.16.0...v2.17.0) (2026-10-05)
+
+### Features
+
+* **minor:** update module github.com/urfave/cli/v3 to v3.14.0 ([#346](https://github.com/promhippie/jenkins_exporter/issues/346)) ([bfe5605](https://github.com/promhippie/jenkins_exporter/commit/bfe56052b8841ac0dc518c96e0c48f7371060cd8))
+
 ## [2.16.0](https://github.com/promhippie/jenkins_exporter/compare/v2.15.0...v2.16.0) (2026-09-28)
 
 ### Features
