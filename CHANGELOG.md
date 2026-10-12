@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.18.0](https://github.com/promhippie/jenkins_exporter/compare/v2.17.0...v2.18.0) (2026-10-12)
+
+### Features
+
+* **minor:** update module github.com/go-chi/chi/v5 to v5.4.0 ([#354](https://github.com/promhippie/jenkins_exporter/issues/354)) ([6b9ff72](https://github.com/promhippie/jenkins_exporter/commit/6b9ff729feefb1fab4decb208b95ac83cbb9cd79))
+* **minor:** update module github.com/prometheus/client_golang to v1.25.0 ([#349](https://github.com/promhippie/jenkins_exporter/issues/349)) ([67c7ff5](https://github.com/promhippie/jenkins_exporter/commit/67c7ff515e3e52beef98703a93aa5a1b64f69096))
+
+### Bugfixes
+
+* **deps:** update golang:1.27.2-alpine docker digest to f92b6ef ([#353](https://github.com/promhippie/jenkins_exporter/issues/353)) ([faa56fc](https://github.com/promhippie/jenkins_exporter/commit/faa56fcf23da4fc62f8bc3e734dbebd13a14c73c))
+* **patch:** update golang docker tag to v1.27.2 ([#351](https://github.com/promhippie/jenkins_exporter/issues/351)) ([63d0270](https://github.com/promhippie/jenkins_exporter/commit/63d0270b2d1f1793a29b1eba8c9479cd6f133462))
+
 ## [2.17.0](https://github.com/promhippie/jenkins_exporter/compare/v2.16.0...v2.17.0) (2026-10-05)
 
 ### Features
