@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.19.0](https://github.com/promhippie/jenkins_exporter/compare/v2.18.0...v2.19.0) (2026-10-19)
+
+### Features
+
+* **minor:** update module github.com/go-chi/chi/v5 to v5.5.0 ([#357](https://github.com/promhippie/jenkins_exporter/issues/357)) ([3041086](https://github.com/promhippie/jenkins_exporter/commit/30410860406c2aae24833c247e3c870dd7f92f19))
+
 ## [2.18.0](https://github.com/promhippie/jenkins_exporter/compare/v2.17.0...v2.18.0) (2026-10-12)
 
 ### Features
