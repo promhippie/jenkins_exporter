@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.19.1](https://github.com/promhippie/jenkins_exporter/compare/v2.19.0...v2.19.1) (2026-10-26)
+
+### Bugfixes
+
+* **deps:** update alpine:3.24 docker digest to 71e9b7b ([#367](https://github.com/promhippie/jenkins_exporter/issues/367)) ([7af5d51](https://github.com/promhippie/jenkins_exporter/commit/7af5d51e19c5d4cdc2b7cc0b27f1e14ec6c9e36f))
+* **deps:** update alpine:3.24 docker digest to be26560 ([#371](https://github.com/promhippie/jenkins_exporter/issues/371)) ([495f3d0](https://github.com/promhippie/jenkins_exporter/commit/495f3d06d5c80236c28d762c568ac242f2280a6a))
+* **deps:** update docker digests ([#366](https://github.com/promhippie/jenkins_exporter/issues/366)) ([acbc065](https://github.com/promhippie/jenkins_exporter/commit/acbc065592da9eaf274513dcdc016b63da960389))
+* **deps:** update golang:1.27.3-alpine docker digest to b8c9b82 ([#368](https://github.com/promhippie/jenkins_exporter/issues/368)) ([716b8ce](https://github.com/promhippie/jenkins_exporter/commit/716b8ce08c26cca8d34dc7165cf2c0f5fe2188d0))
+* **patch:** update golang docker tag to v1.27.3 ([#363](https://github.com/promhippie/jenkins_exporter/issues/363)) ([b1fc6d9](https://github.com/promhippie/jenkins_exporter/commit/b1fc6d98118aa1d93542ede922a91173e152e8bd))
+
 ## [2.19.0](https://github.com/promhippie/jenkins_exporter/compare/v2.18.0...v2.19.0) (2026-10-19)
 
 ### Features
