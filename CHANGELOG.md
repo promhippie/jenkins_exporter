@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.19.2](https://github.com/promhippie/jenkins_exporter/compare/v2.19.1...v2.19.2) (2026-11-02)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.3-alpine docker digest to d200d2d ([#372](https://github.com/promhippie/jenkins_exporter/issues/372)) ([f935212](https://github.com/promhippie/jenkins_exporter/commit/f935212fa1992b214c5f805dc52bc689dcb036e9))
+
 ## [2.19.1](https://github.com/promhippie/jenkins_exporter/compare/v2.19.0...v2.19.1) (2026-10-26)
 
 ### Bugfixes
