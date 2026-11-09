@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.19.3](https://github.com/promhippie/jenkins_exporter/compare/v2.19.2...v2.19.3) (2026-11-09)
+
+### Bugfixes
+
+* **deps:** update alpine:3.24 docker digest to ce9e1e6 ([#379](https://github.com/promhippie/jenkins_exporter/issues/379)) ([c0db789](https://github.com/promhippie/jenkins_exporter/commit/c0db789536cde438f4ecda8c1061bd87b41d3dfe))
+* **deps:** update alpine:3.24 docker digest to f59abe6 ([#381](https://github.com/promhippie/jenkins_exporter/issues/381)) ([168ef4e](https://github.com/promhippie/jenkins_exporter/commit/168ef4e666a5ed120582bfd159a237cc330cff69))
+* **deps:** update docker digests ([#380](https://github.com/promhippie/jenkins_exporter/issues/380)) ([633ffe5](https://github.com/promhippie/jenkins_exporter/commit/633ffe59dfa14fb2ad6528983514fb50f83f4d88))
+* **deps:** update golang:1.27.3-alpine docker digest to fa48812 ([#378](https://github.com/promhippie/jenkins_exporter/issues/378)) ([267722f](https://github.com/promhippie/jenkins_exporter/commit/267722fbfa9c845884d08f75842b8b704911dc44))
+
 ## [2.19.2](https://github.com/promhippie/jenkins_exporter/compare/v2.19.1...v2.19.2) (2026-11-02)
 
 ### Bugfixes
