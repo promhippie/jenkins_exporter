@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.20.0](https://github.com/promhippie/jenkins_exporter/compare/v2.19.4...v2.20.0) (2026-11-23)
+
+### Features
+
+* **minor:** update module github.com/prometheus/exporter-toolkit to v0.21.0 ([#394](https://github.com/promhippie/jenkins_exporter/issues/394)) ([fb0a45d](https://github.com/promhippie/jenkins_exporter/commit/fb0a45dbf6881eacc533846b25237bcb49675d7f))
+* switch to plain hugo and resolve deprecations ([04c63e9](https://github.com/promhippie/jenkins_exporter/commit/04c63e93ae4c37c6064fed284e12ab27fd83448a))
+
 ## [2.19.4](https://github.com/promhippie/jenkins_exporter/compare/v2.19.3...v2.19.4) (2026-11-16)
 
 ### Bugfixes
